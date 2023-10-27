@@ -2,7 +2,6 @@
 //
 
 #include "Engine.hpp";
-
 void Engine::ustawRozdzielczosc(int szerokosc, int wysokosc)
 {
     this->szerokosc = szerokosc;
