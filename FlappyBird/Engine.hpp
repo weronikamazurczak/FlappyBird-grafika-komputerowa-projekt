@@ -1,7 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <fstream>
+
 using namespace std;
+
 class Engine
 {
 public:

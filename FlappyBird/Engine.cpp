@@ -6,7 +6,6 @@ void Engine::ustawRozdzielczosc(int szerokosc, int wysokosc)
 {
     this->szerokosc = szerokosc;
     this->wysokosc = wysokosc;
-
 }
 
 void Engine::inneParametry(sf::RenderWindow* glowneOkno)
@@ -62,8 +61,7 @@ int main()
     Engine engine;
     engine.ustawRozdzielczosc(1024, 768);
     engine.petlaGry();
-    engine.zapisywanieDoPliku("gowno");
-    cout << "test";
+    engine.zapisywanieDoPliku("nic");
     return 0;
 }
 
