@@ -64,6 +64,7 @@ int main()
     engine.ustawRozdzielczosc(1024, 768);
     engine.petlaGry();
     engine.zapisywanieDoPliku("gowno");
+    cout << "test";
     return 0;
 }
 
