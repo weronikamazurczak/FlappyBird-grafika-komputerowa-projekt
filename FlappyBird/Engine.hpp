@@ -1,7 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <fstream>
+#include "MenuGry.hpp"
+
 using namespace std;
+
 class Engine
 {
 public:
@@ -13,4 +16,5 @@ public:
 	void zapisywanieDoPliku(string);
 private:
 	int szerokosc, wysokosc;
+	MenuGry menu; 
 };

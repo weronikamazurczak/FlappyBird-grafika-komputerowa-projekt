@@ -132,9 +132,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="MenuGry.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.hpp" />
+    <ClInclude Include="MenuGry.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="INNE\img\PlayButton.png" />
+    <Image Include="INNE\img\title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="INNE\instrukcja.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
