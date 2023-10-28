@@ -21,6 +21,5 @@ private:
 	sf::Text przyciskInstrukcja;
 	std::string instrukcja;
 
-
 	sf::Font font;
 };

@@ -57,8 +57,6 @@ void Engine::petlaGry()
         menu.obsluga(&window);
         
 
-
-
         window.display();
     }
 }
