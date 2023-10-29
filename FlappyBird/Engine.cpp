@@ -54,19 +54,17 @@ void Engine::petlaGry()
 
         menu.wyswietl(&window);
         menu.obsluga(&window);
-        
+
 
         window.display();
     }
 }
-
 
 int main()
 {
     Engine engine;
     engine.ustawRozdzielczosc(768, 1024);
     engine.petlaGry();
-    engine.zapisywanieDoPliku("gowno");
+    engine.zapisywanieDoPliku("FlappyBird");
     return 0;
 }
-
