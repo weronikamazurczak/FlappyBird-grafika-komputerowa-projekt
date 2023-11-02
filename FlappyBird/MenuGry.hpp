@@ -25,4 +25,6 @@ private:
 
 	sf::Font font;
 	sf::Font font2;
+
+	sf::RectangleShape zaInstrukcja;
 };
