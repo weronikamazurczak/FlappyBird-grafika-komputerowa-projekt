@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Gra.hpp"
 
 
 MenuGry::MenuGry()
@@ -113,13 +114,14 @@ void MenuGry::obsluga(sf::RenderWindow* okno)
                     
                 }
             }
-            /* to sie przyda
+            
 
             if (przyciskStartSprite.getGlobalBounds().contains(pozycjaMyszy.x, pozycjaMyszy.y))
             {
-            // TU BEDZUIE TRZEBA DODAC ZE JAK SIE KLIKNIE TO SIE PLANSZA GRY OTWIERA !!!!!!!!!!!!!!!!!!!
+                Gra gra;
+                gra.otworzOknoGry();
             }
-            */
+            
         }
     }
 }
@@ -169,3 +171,4 @@ void MenuGry::otworzInstrukcje()
         oknoInstrukcji.display();
     }
 }
+

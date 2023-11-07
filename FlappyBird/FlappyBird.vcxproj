@@ -132,10 +132,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Gra.cpp" />
     <ClCompile Include="MenuGry.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.hpp" />
+    <ClInclude Include="Gra.hpp" />
     <ClInclude Include="MenuGry.hpp" />
   </ItemGroup>
   <ItemGroup>
