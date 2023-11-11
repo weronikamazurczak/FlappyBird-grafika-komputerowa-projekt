@@ -133,12 +133,18 @@
   <ItemGroup>
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Gra.cpp" />
+    <ClCompile Include="Grunt.cpp" />
     <ClCompile Include="MenuGry.cpp" />
+    <ClCompile Include="Ptak.cpp" />
+    <ClCompile Include="Rury.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.hpp" />
     <ClInclude Include="Gra.hpp" />
+    <ClInclude Include="Grunt.hpp" />
     <ClInclude Include="MenuGry.hpp" />
+    <ClInclude Include="Ptak.hpp" />
+    <ClInclude Include="Rury.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="INNE\img\PlayButton.png" />

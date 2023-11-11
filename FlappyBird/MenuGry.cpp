@@ -1,7 +1,4 @@
 #include "MenuGry.hpp"
-#include <iostream>
-#include <fstream>
-#include <string>
 #include "Gra.hpp"
 
 
@@ -113,14 +110,20 @@ void MenuGry::obsluga(sf::RenderWindow* okno)
                     otworzInstrukcje();
                     
                 }
+                if (przyciskStartSprite.getGlobalBounds().contains(pozycjaMyszy.x, pozycjaMyszy.y))
+                {
+                    Gra gra;
+                    gra.otworzOknoGry();
+                }
+
             }
             
 
-            if (przyciskStartSprite.getGlobalBounds().contains(pozycjaMyszy.x, pozycjaMyszy.y))
+            /*if (przyciskStartSprite.getGlobalBounds().contains(pozycjaMyszy.x, pozycjaMyszy.y))
             {
                 Gra gra;
                 gra.otworzOknoGry();
-            }
+            }*/
             
         }
     }

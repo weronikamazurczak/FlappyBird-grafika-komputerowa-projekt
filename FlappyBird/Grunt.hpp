@@ -1,0 +1,19 @@
+#include <SFML/Graphics.hpp>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+
+
+class Grunt
+{
+public:
+	Grunt();
+
+	void poruszanieGruntu(sf::RenderWindow* okno);
+	void wyswietlgrunt(sf::RenderWindow* okno);
+private:
+	sf::Texture gruntTexture;
+	sf::Sprite gruntSprite;
+	std::vector<sf::Sprite> gruntVektor;
+};

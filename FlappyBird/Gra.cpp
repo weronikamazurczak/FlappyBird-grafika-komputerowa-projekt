@@ -1,6 +1,4 @@
 #include "Gra.hpp"
-#include <iostream>
-#include <fstream>
 
 Gra::Gra()
 {
@@ -28,6 +26,7 @@ void Gra::otworzOknoGry()
     while (oknoGry.isOpen())
     {
         sf::Event event;
+
         while (oknoGry.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
@@ -37,6 +36,21 @@ void Gra::otworzOknoGry()
         }
         oknoGry.clear();
         oknoGry.draw(tloSprite);
+
+        ptak.wyswietlPtaka(&oknoGry);
+
+        //rury.dolnaRura(&oknoGry);
+        //rury.gornaRura(&oknoGry);
+        //rury.niewidzialnaRura(&oknoGry);
+        //rury.punktowaRura(&oknoGry);
+        rury.poruszanieRur(&oknoGry);
+        rury.wyswietlRury(&oknoGry);
+        
+        //rury.losowePrzesuniecieRury();
+
+        grunt.poruszanieGruntu(&oknoGry);
+        grunt.wyswietlgrunt(&oknoGry);
+
         oknoGry.display();
     }
 }
