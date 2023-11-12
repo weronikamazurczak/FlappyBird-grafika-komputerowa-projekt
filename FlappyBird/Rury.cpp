@@ -1,5 +1,7 @@
 #include "Rury.hpp"
 
+using namespace std;
+
 Rury::Rury()
 {
     if (ruraGoraTexture.loadFromFile("INNE/img/PipeUp.png"))
@@ -44,7 +46,6 @@ void Rury::poruszanieRur(sf::RenderWindow* okno)
     {
         sf::Vector2f pozycja = ruraGoraVektor.at(i).getPosition();
         sf::Vector2f pozycja2 = ruraDolVektor.at(i).getPosition();
-
         ruraGoraVektor.at(i).move(-ruch, 0.0f);
         ruraDolVektor.at(i).move(-ruch, 0.0f);
 

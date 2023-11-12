@@ -21,7 +21,7 @@ void Gra::wyswietl(sf::RenderWindow* okno)
 
 void Gra::otworzOknoGry()
 {
-    sf::RenderWindow oknoGry(sf::VideoMode(768, 1024), "Gra");
+    sf::RenderWindow oknoGry(sf::VideoMode(768, 1024), "Gra", sf::Style::Titlebar | sf::Style::Close);
 
     while (oknoGry.isOpen())
     {
@@ -36,21 +36,11 @@ void Gra::otworzOknoGry()
         }
         oknoGry.clear();
         oknoGry.draw(tloSprite);
-
         ptak.wyswietlPtaka(&oknoGry);
-
-        //rury.dolnaRura(&oknoGry);
-        //rury.gornaRura(&oknoGry);
-        //rury.niewidzialnaRura(&oknoGry);
-        //rury.punktowaRura(&oknoGry);
         rury.poruszanieRur(&oknoGry);
         rury.wyswietlRury(&oknoGry);
-        
-        //rury.losowePrzesuniecieRury();
-
         grunt.poruszanieGruntu(&oknoGry);
         grunt.wyswietlgrunt(&oknoGry);
-
         oknoGry.display();
     }
 }

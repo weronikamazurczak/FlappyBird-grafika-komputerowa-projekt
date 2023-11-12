@@ -13,7 +13,9 @@ public:
 	void poruszanieGruntu(sf::RenderWindow* okno);
 	void wyswietlgrunt(sf::RenderWindow* okno);
 private:
+	int janusz = 0;
 	sf::Texture gruntTexture;
 	sf::Sprite gruntSprite;
+	sf::Sprite nowyGruntSprite;
 	std::vector<sf::Sprite> gruntVektor;
 };

@@ -59,50 +59,37 @@ void MenuGry::wyswietl(sf::RenderWindow* okno)
     int margines = 100;
     int margines2 = 700;
     int margines3 = 750;
-
-    okno->clear();
-
-    okno->draw(tloSprite);
-
-    
-    okno->draw(tytulSprite);
     tytulSprite.setPosition(sf::Vector2f((okno->getSize().x - tytulSprite.getGlobalBounds().width) / 2, margines));
-
-    
-    okno->draw(przyciskStartSprite);
     przyciskStartSprite.setPosition(sf::Vector2f((okno->getSize().x - przyciskStartSprite.getGlobalBounds().width) / 2, okno->getSize().y - przyciskStartSprite.getGlobalBounds().height - margines * 4));
-
-    okno->draw(przyciskInstrukcja);
     przyciskInstrukcja.setString("INSTRUKCJA");
     przyciskInstrukcja.setCharacterSize(150);
     przyciskInstrukcja.setFillColor(sf::Color::Black);
-    przyciskInstrukcja.setPosition(sf::Vector2f((okno->getSize().x - przyciskInstrukcja.getGlobalBounds().width)/2, margines2));
-
-    okno->draw(zaInstrukcja);
+    przyciskInstrukcja.setPosition(sf::Vector2f((okno->getSize().x - przyciskInstrukcja.getGlobalBounds().width) / 2, margines2));
     zaInstrukcja.setSize(sf::Vector2f(435, 100));
     zaInstrukcja.setFillColor(sf::Color::Transparent);
     zaInstrukcja.setPosition(sf::Vector2f((okno->getSize().x - przyciskInstrukcja.getGlobalBounds().width) / 2, margines3));
-
+    zaGra.setSize(sf::Vector2f(280, 155));
+    zaGra.setFillColor(sf::Color::Red);
+    zaGra.setPosition(sf::Vector2f((okno->getSize().x - przyciskStartSprite.getGlobalBounds().width) / 2, okno->getSize().y - przyciskStartSprite.getGlobalBounds().height - margines * 4));
+    okno->clear();
+    okno->draw(zaInstrukcja);
+    okno->draw(zaGra);
+    okno->draw(tloSprite);
+    okno->draw(tytulSprite);
+    okno->draw(przyciskStartSprite);
+    okno->draw(przyciskInstrukcja);
+    okno->display();
 }
 
 void MenuGry::obsluga(sf::RenderWindow* okno)
 {
     sf::Event event;
     sf::Vector2i pozycjaMyszy;
-
     pozycjaMyszy = sf::Mouse::getPosition(*okno);
-
-
-
-
     while (okno->pollEvent(event))
     {
         if (event.type == sf::Event::MouseButtonPressed)
         {
-            std::cout << przyciskInstrukcja.getGlobalBounds().getPosition().x << std::endl;
-            std::cout << przyciskInstrukcja.getGlobalBounds().getPosition().y << std::endl;
-            std::cout << pozycjaMyszy.x << "mysz" << std::endl;
-            std::cout << pozycjaMyszy.y << "kshdhhfjsd" << std::endl;
             if (event.type == sf::Event::MouseButtonPressed)
             {
                 if (zaInstrukcja.getGlobalBounds().contains(pozycjaMyszy.x, pozycjaMyszy.y))
@@ -110,20 +97,14 @@ void MenuGry::obsluga(sf::RenderWindow* okno)
                     otworzInstrukcje();
                     
                 }
-                if (przyciskStartSprite.getGlobalBounds().contains(pozycjaMyszy.x, pozycjaMyszy.y))
+                if (zaGra.getGlobalBounds().contains(pozycjaMyszy.x, pozycjaMyszy.y))
                 {
                     Gra gra;
                     gra.otworzOknoGry();
                 }
 
             }
-            
-
-            /*if (przyciskStartSprite.getGlobalBounds().contains(pozycjaMyszy.x, pozycjaMyszy.y))
-            {
-                Gra gra;
-                gra.otworzOknoGry();
-            }*/
+           
             
         }
     }

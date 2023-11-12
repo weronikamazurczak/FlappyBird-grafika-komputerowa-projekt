@@ -30,4 +30,5 @@ private:
 	sf::Font font2;
 
 	sf::RectangleShape zaInstrukcja;
+	sf::RectangleShape zaGra;
 };
