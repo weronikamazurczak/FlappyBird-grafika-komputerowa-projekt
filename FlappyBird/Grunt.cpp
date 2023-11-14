@@ -24,11 +24,11 @@ void Grunt::poruszanieGruntu(sf::RenderWindow* okno)
     for (unsigned short int i = 0; i < gruntVektor.size(); i++)
     {
         sf::Vector2f pozycja = gruntVektor.at(i).getPosition();
-        cout << gruntVektor.at(i).getPosition().x << endl;
-        cout << "okno rozmiar " << okno->getSize().x << endl;
+       // cout << gruntVektor.at(i).getPosition().x << endl;
+        //cout << "okno rozmiar " << okno->getSize().x << endl;
         // Jeœli sprite dotknie lewej strony ekranu, przenieœ go na koniec wektora
-        if (gruntVektor.at(i).getPosition().x < 0 && janusz!=1) {
-            janusz = 1;
+        if (gruntVektor.at(i).getPosition().x < 0 && wyrenderowane!=1) {
+            wyrenderowane = 1;
             nowyGruntSprite.setTexture(gruntTexture);
             nowyGruntSprite.setPosition(pozycja.x + gruntVektor.at(i).getLocalBounds().width, pozycja.y);
             gruntVektor.push_back(nowyGruntSprite);

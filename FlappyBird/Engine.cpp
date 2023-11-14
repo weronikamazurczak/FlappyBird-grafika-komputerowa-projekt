@@ -45,7 +45,7 @@ void Engine::petlaGry()
             if (event.type == sf::Event::KeyPressed)
                 czasomierz.restart();
             float mCzas = czasomierz.getElapsedTime().asSeconds();
-            if (mCzas > 30 || event.type == sf::Event::Closed)
+            if (mCzas > 60 || event.type == sf::Event::Closed)
                 window.close();
 
         }

@@ -7,8 +7,11 @@ Rury::Rury()
     if (ruraGoraTexture.loadFromFile("INNE/img/PipeUp.png"))
     {
         ruraGoraSprite.setTexture(ruraGoraTexture);
-        for (int i = 0; i < 3; i++) {
-            ruraGoraSprite.setPosition(i * 320.0f, 502 + rand() % 262);
+        for (int i = 0; i < 3; i++) 
+        {
+ 
+            int wysokoscRuraGora = 523;
+            ruraGoraSprite.setPosition(i * 320.0f,wysokoscRuraGora);
             ruraGoraVektor.push_back(ruraGoraSprite);
         }
     }
@@ -20,11 +23,18 @@ Rury::Rury()
     if (ruraDolTexture.loadFromFile("INNE/img/PipeDown.png"))
     {
         ruraDolSprite.setTexture(ruraDolTexture);
-        for (int i = 0; i < 3; i++) {
-            ruraDolSprite.setPosition(i * 320.0f, 170 - rand() % 369);
-            ruraDolVektor.push_back(ruraDolSprite);
+        for (int i = 0; i < 3; i++)
+        {
+            int wysokosRURAdol = 0 - rand() % 50;
 
+            while ((  (763- ruraGoraVektor.at(i).getPosition().y + wysokosRURAdol) > 220) && 
+               ruraGoraVektor.at(i).getPosition().y >=523 )  {
+                wysokosRURAdol = 0 - rand() % 100;
+            }
+            ruraDolSprite.setPosition(i * 320.0f, wysokosRURAdol);
+            ruraDolVektor.push_back(ruraDolSprite);
         }
+
     }
     else
     {
@@ -58,21 +68,14 @@ void Rury::poruszanieRur(sf::RenderWindow* okno)
         if (ruraGoraVektor.at(i).getPosition().x < 0 - ruraGoraVektor.at(i).getLocalBounds().width)
         {
             sf::Vector2f pozycja(okno->getSize().x, ruraGoraVektor.at(i).getPosition().y);
-
-            // Dodajemy losow¹ wartoœæ do pozycji y, aby uzyskaæ ró¿ne wysokoœci rur
-            //pozycja.y = 502 + rand() % 262;
-
             ruraGoraVektor.at(i).setPosition(pozycja);
         }
         if (ruraDolVektor.at(i).getPosition().x < 0 - ruraDolVektor.at(i).getLocalBounds().width)
         {
             sf::Vector2f pozycja2(okno->getSize().x, ruraDolVektor.at(i).getPosition().y);
-
-            // Dodajemy losow¹ wartoœæ do pozycji y, aby uzyskaæ ró¿ne wysokoœci rur
-           // pozycja2.y = 0 - rand() % 369;
-
             ruraDolVektor.at(i).setPosition(pozycja2);
         }
+
     }
 }
 void Rury::wyswietlRury(sf::RenderWindow* okno)

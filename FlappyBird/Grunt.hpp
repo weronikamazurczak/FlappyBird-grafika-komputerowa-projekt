@@ -13,7 +13,7 @@ public:
 	void poruszanieGruntu(sf::RenderWindow* okno);
 	void wyswietlgrunt(sf::RenderWindow* okno);
 private:
-	int janusz = 0;
+	int wyrenderowane = 0;
 	sf::Texture gruntTexture;
 	sf::Sprite gruntSprite;
 	sf::Sprite nowyGruntSprite;
