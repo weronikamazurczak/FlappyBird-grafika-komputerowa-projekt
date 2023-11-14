@@ -99,6 +99,7 @@ void MenuGry::obsluga(sf::RenderWindow* okno)
                 }
                 if (zaGra.getGlobalBounds().contains(pozycjaMyszy.x, pozycjaMyszy.y))
                 {
+                    okno->close();
                     Gra gra;
                     gra.otworzOknoGry();
                 }

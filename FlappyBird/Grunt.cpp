@@ -19,7 +19,7 @@ Grunt::Grunt()
 void Grunt::poruszanieGruntu(sf::RenderWindow* okno)
 {
     const float dt = 1.0f / 100.0f;
-    float ruch = 10.0f * dt;
+    float ruch = 100.0f * dt;
 
     for (unsigned short int i = 0; i < gruntVektor.size(); i++)
     {
