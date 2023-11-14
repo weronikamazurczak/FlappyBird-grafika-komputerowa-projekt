@@ -1,4 +1,4 @@
-#include "Rury.hpp"
+ï»¿#include "Rury.hpp"
 
 using namespace std;
 
@@ -7,7 +7,10 @@ Rury::Rury()
     if (ruraGoraTexture.loadFromFile("INNE/img/PipeUp.png"))
     {
         ruraGoraSprite.setTexture(ruraGoraTexture);
-        ruraGoraVektor.push_back(ruraGoraSprite);
+        for (int i = 0; i < 3; i++) {
+            ruraGoraSprite.setPosition(i * 320.0f, 502 + rand() % 262);
+            ruraGoraVektor.push_back(ruraGoraSprite);
+        }
     }
     else
     {
@@ -17,7 +20,11 @@ Rury::Rury()
     if (ruraDolTexture.loadFromFile("INNE/img/PipeDown.png"))
     {
         ruraDolSprite.setTexture(ruraDolTexture);
-        ruraDolVektor.push_back(ruraDolSprite);
+        for (int i = 0; i < 3; i++) {
+            ruraDolSprite.setPosition(i * 320.0f, 170 - rand() % 369);
+            ruraDolVektor.push_back(ruraDolSprite);
+
+        }
     }
     else
     {
@@ -33,8 +40,7 @@ Rury::Rury()
     else
     {
         std::cout << "Blad wczytania tekstury rura punktowa w aplikacji!" << std::endl;
-    }
-    
+    }   
 }
 
 void Rury::poruszanieRur(sf::RenderWindow* okno)
@@ -53,8 +59,8 @@ void Rury::poruszanieRur(sf::RenderWindow* okno)
         {
             sf::Vector2f pozycja(okno->getSize().x, ruraGoraVektor.at(i).getPosition().y);
 
-            // Dodajemy losow¹ wartoœæ do pozycji y, aby uzyskaæ ró¿ne wysokoœci rur
-            pozycja.y = 502 + rand() % 262;
+            // Dodajemy losowÂ¹ wartoÅ“Ã¦ do pozycji y, aby uzyskaÃ¦ rÃ³Â¿ne wysokoÅ“ci rur
+            //pozycja.y = 502 + rand() % 262;
 
             ruraGoraVektor.at(i).setPosition(pozycja);
         }
@@ -62,14 +68,13 @@ void Rury::poruszanieRur(sf::RenderWindow* okno)
         {
             sf::Vector2f pozycja2(okno->getSize().x, ruraDolVektor.at(i).getPosition().y);
 
-            // Dodajemy losow¹ wartoœæ do pozycji y, aby uzyskaæ ró¿ne wysokoœci rur
-            pozycja2.y = 0 - rand() % 369; 
+            // Dodajemy losowÂ¹ wartoÅ“Ã¦ do pozycji y, aby uzyskaÃ¦ rÃ³Â¿ne wysokoÅ“ci rur
+           // pozycja2.y = 0 - rand() % 369;
 
             ruraDolVektor.at(i).setPosition(pozycja2);
         }
     }
 }
-
 void Rury::wyswietlRury(sf::RenderWindow* okno)
 {
     for (unsigned short int i = 0; i < ruraGoraVektor.size(); i++)
@@ -78,4 +83,3 @@ void Rury::wyswietlRury(sf::RenderWindow* okno)
         okno->draw(ruraDolVektor.at(i));
     }
 }
-

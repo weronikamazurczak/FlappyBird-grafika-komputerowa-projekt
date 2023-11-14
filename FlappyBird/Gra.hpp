@@ -16,7 +16,7 @@ private:
 	sf::Texture tloTexture;
 	sf::Sprite tloSprite;
 	
-
+	void inneParametry(sf::RenderWindow* okno);
 	Ptak ptak;
 	Grunt grunt;
 	Rury rury;

@@ -19,12 +19,25 @@ void Gra::wyswietl(sf::RenderWindow* okno)
     okno->display();
 }
 
+void Gra::inneParametry(sf::RenderWindow* glowneOkno)
+{
+    glowneOkno->setFramerateLimit(60);
+}
+
 void Gra::otworzOknoGry()
 {
     sf::RenderWindow oknoGry(sf::VideoMode(768, 1024), "Gra", sf::Style::Titlebar | sf::Style::Close);
 
+    sf::Clock clock;
+    inneParametry(&oknoGry);
+
     while (oknoGry.isOpen())
     {
+        float currentTime = clock.restart().asSeconds();
+        float fps = 1.f / (currentTime );
+   
+        std::cout << "FPS: " << fps << std::endl;
+
         sf::Event event;
 
         while (oknoGry.pollEvent(event))
@@ -37,8 +50,11 @@ void Gra::otworzOknoGry()
         oknoGry.clear();
         oknoGry.draw(tloSprite);
         ptak.wyswietlPtaka(&oknoGry);
-        rury.poruszanieRur(&oknoGry);
-        rury.wyswietlRury(&oknoGry);
+
+            rury.poruszanieRur(&oknoGry);
+            rury.wyswietlRury(&oknoGry);
+        
+    
         grunt.poruszanieGruntu(&oknoGry);
         grunt.wyswietlgrunt(&oknoGry);
         oknoGry.display();

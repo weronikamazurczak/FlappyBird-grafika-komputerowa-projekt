@@ -11,6 +11,8 @@ public:
 	void poruszanieRur(sf::RenderWindow* okno);
 	void wyswietlRury(sf::RenderWindow* okno);
 
+	void poruszanieRur2(sf::RenderWindow* okno);
+
 private:
 	sf::Texture ruraGoraTexture;
 	sf::Sprite ruraGoraSprite;
@@ -25,6 +27,4 @@ private:
 	sf::Texture ruraPunktowaTexture;
 	sf::Sprite ruraPunktowaSprite;
 	std::vector<sf::Sprite> ruraPunktowaVektor;
-
-
 };
