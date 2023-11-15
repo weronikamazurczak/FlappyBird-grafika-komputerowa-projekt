@@ -22,6 +22,7 @@ void Gra::wyswietl(sf::RenderWindow* okno)
 void Gra::inneParametry(sf::RenderWindow* glowneOkno)
 {
     glowneOkno->setFramerateLimit(60);
+    ptak.ptakInit(glowneOkno);
 }
 
 void Gra::otworzOknoGry()
@@ -34,8 +35,8 @@ void Gra::otworzOknoGry()
     while (oknoGry.isOpen())
     {
         float currentTime = clock.restart().asSeconds();
-        float fps = 1.f / (currentTime );
-   
+        float fps = 1.f / (currentTime);
+
         std::cout << "FPS: " << fps << std::endl;
 
         sf::Event event;
@@ -46,15 +47,23 @@ void Gra::otworzOknoGry()
             {
                 oknoGry.close();
             }
+
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        {
+            ptak.skacz(&oknoGry);
+
         }
         oknoGry.clear();
         oknoGry.draw(tloSprite);
-        ptak.wyswietlPtaka(&oknoGry);
+        ptak.przemiescPtakaDoPrzodu(&oknoGry);
+        ptak.grawitacjaPtak();
+        ptak.draw(&oknoGry);
 
-            rury.poruszanieRur(&oknoGry);
-            rury.wyswietlRury(&oknoGry);
-        
-    
+        rury.poruszanieRur(&oknoGry);
+        rury.wyswietlRury(&oknoGry);
+
+
         grunt.poruszanieGruntu(&oknoGry);
         grunt.wyswietlgrunt(&oknoGry);
         oknoGry.display();
