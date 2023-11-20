@@ -10,8 +10,8 @@ public:
 
 	void poruszanieRur(sf::RenderWindow* okno);
 	void wyswietlRury(sf::RenderWindow* okno);
-
-	void poruszanieRur2(sf::RenderWindow* okno);
+	std::vector<sf::Sprite> getRuraDolVektor();
+	std::vector<sf::Sprite> getRuraGoraVektor();
 
 private:
 	sf::Texture ruraGoraTexture;

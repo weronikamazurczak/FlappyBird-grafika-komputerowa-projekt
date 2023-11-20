@@ -4,18 +4,21 @@
 #include <fstream>
 #include "Ptak.hpp";
 #include "Grunt.hpp";
-#include "Rury.hpp";
 
-class Gra 
+
+
+class Gra
 {
 public:
 	Gra();
 	void wyswietl(sf::RenderWindow* okno);
 	void otworzOknoGry();
+	void obslugaKolizji();
+
 private:
 	sf::Texture tloTexture;
 	sf::Sprite tloSprite;
-	
+
 	void inneParametry(sf::RenderWindow* okno);
 	Ptak ptak;
 	Grunt grunt;

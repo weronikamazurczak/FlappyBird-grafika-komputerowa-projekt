@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <fstream>
+#include "Rury.hpp"
+
 //#include <vector>
 #define GRAWITACJAPTAKA 5.0
 #define SKOKPTAKA 20.0
@@ -12,6 +14,8 @@ public:
 	void skacz(sf::RenderWindow* okno);
 	void ptakInit(sf::RenderWindow* okno);
 	void grawitacjaPtak();
+	bool kolizja(Rury rury);
+	sf::Sprite getPtakSprite();
 private:
 	float x;
 	float y;

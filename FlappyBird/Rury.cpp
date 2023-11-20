@@ -7,11 +7,11 @@ Rury::Rury()
     if (ruraGoraTexture.loadFromFile("INNE/img/PipeUp.png"))
     {
         ruraGoraSprite.setTexture(ruraGoraTexture);
-        for (int i = 0; i < 3; i++) 
+        for (int i = 0; i < 3; i++)
         {
- 
+
             int wysokoscRuraGora = 523;
-            ruraGoraSprite.setPosition(i * 320.0f,wysokoscRuraGora);
+            ruraGoraSprite.setPosition(i * 320.0f, wysokoscRuraGora);
             ruraGoraVektor.push_back(ruraGoraSprite);
         }
     }
@@ -27,8 +27,8 @@ Rury::Rury()
         {
             int wysokosRURAdol = 0 - rand() % 50;
 
-            while ((  (763- ruraGoraVektor.at(i).getPosition().y + wysokosRURAdol) > 220) && 
-               ruraGoraVektor.at(i).getPosition().y >=523 )  {
+            while (((763 - ruraGoraVektor.at(i).getPosition().y + wysokosRURAdol) > 220) &&
+                ruraGoraVektor.at(i).getPosition().y >= 523) {
                 wysokosRURAdol = 0 - rand() % 100;
             }
             ruraDolSprite.setPosition(i * 320.0f, wysokosRURAdol);
@@ -50,7 +50,7 @@ Rury::Rury()
     else
     {
         std::cout << "Blad wczytania tekstury rura punktowa w aplikacji!" << std::endl;
-    }   
+    }
 }
 
 void Rury::poruszanieRur(sf::RenderWindow* okno)
@@ -85,4 +85,14 @@ void Rury::wyswietlRury(sf::RenderWindow* okno)
         okno->draw(ruraGoraVektor.at(i));
         okno->draw(ruraDolVektor.at(i));
     }
+}
+
+std::vector<sf::Sprite> Rury::getRuraDolVektor()
+{
+    return ruraDolVektor;
+}
+
+std::vector<sf::Sprite> Rury::getRuraGoraVektor()
+{
+    return ruraGoraVektor;
 }

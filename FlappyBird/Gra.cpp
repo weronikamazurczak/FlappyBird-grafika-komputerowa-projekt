@@ -25,6 +25,16 @@ void Gra::inneParametry(sf::RenderWindow* glowneOkno)
     ptak.ptakInit(glowneOkno);
 }
 
+
+
+void Gra::obslugaKolizji()
+{
+    // Tutaj mo¿esz dodaæ kod obs³ugi kolizji, np. zatrzymanie gry, reset pozycji ptaka itp.
+    std::cout << "Kolizja! Gra zatrzymana lub resetuj pozycjê ptaka.\n";
+    // Przyk³adowy kod:
+    // gameState = GameState::GameOver;
+    // ptak.resetPosition();
+}
 void Gra::otworzOknoGry()
 {
     sf::RenderWindow oknoGry(sf::VideoMode(768, 1024), "Gra", sf::Style::Titlebar | sf::Style::Close);
@@ -37,7 +47,7 @@ void Gra::otworzOknoGry()
         float currentTime = clock.restart().asSeconds();
         float fps = 1.f / (currentTime);
 
-        std::cout << "FPS: " << fps << std::endl;
+        // std::cout << "FPS: " << fps << std::endl;
 
         sf::Event event;
 
@@ -56,6 +66,10 @@ void Gra::otworzOknoGry()
         }
         oknoGry.clear();
         oknoGry.draw(tloSprite);
+        if (ptak.kolizja(rury)) {
+            obslugaKolizji();
+        }
+
         ptak.przemiescPtakaDoPrzodu(&oknoGry);
         ptak.grawitacjaPtak();
         ptak.draw(&oknoGry);
@@ -66,6 +80,8 @@ void Gra::otworzOknoGry()
 
         grunt.poruszanieGruntu(&oknoGry);
         grunt.wyswietlgrunt(&oknoGry);
+
+
         oknoGry.display();
     }
 }

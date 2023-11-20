@@ -45,3 +45,29 @@ void Ptak::grawitacjaPtak() {
     if (y > 700)
         y = 700;
 }
+
+sf::Sprite Ptak::getPtakSprite()
+{
+    return ptakSprite;
+}
+
+bool Ptak::kolizja(Rury rury)
+{
+    const sf::FloatRect ptakRect = ptakSprite.getGlobalBounds();
+
+
+    if (y < 10)
+        return true;
+    if (y >= 695)
+        return true;
+
+    for (auto& ruraGora : rury.getRuraGoraVektor())
+        return ptakRect.intersects(ruraGora.getGlobalBounds());
+
+
+    for (auto& ruraDol : rury.getRuraDolVektor())
+        return ptakRect.intersects(ruraDol.getGlobalBounds());
+
+    return false;
+}
+
