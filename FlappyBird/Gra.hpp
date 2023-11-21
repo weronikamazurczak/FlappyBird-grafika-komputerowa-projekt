@@ -18,7 +18,9 @@ public:
 private:
 	sf::Texture tloTexture;
 	sf::Sprite tloSprite;
-
+	sf::Font font;
+	int punkty = 0;
+	sf::Text textPunkty;
 	void inneParametry(sf::RenderWindow* okno);
 	Ptak ptak;
 	Grunt grunt;

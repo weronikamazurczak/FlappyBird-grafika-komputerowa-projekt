@@ -23,6 +23,18 @@ void Gra::inneParametry(sf::RenderWindow* glowneOkno)
 {
     glowneOkno->setFramerateLimit(60);
     ptak.ptakInit(glowneOkno);
+    if (font.loadFromFile("INNE/fonts/ArialBold.ttf"))
+    {
+        textPunkty.setFont(font);
+    }
+    else
+    {
+        std::cout << "Blad wczytania czcionki" << std::endl;
+    }
+    textPunkty.setCharacterSize(80);
+    textPunkty.setPosition(20,20);
+    textPunkty.setFillColor(sf::Color::Red);
+    textPunkty.setString(std::to_string(punkty));
 }
 
 
@@ -66,6 +78,7 @@ void Gra::otworzOknoGry()
         }
         oknoGry.clear();
         oknoGry.draw(tloSprite);
+       
         if (ptak.kolizja(rury)) {
             obslugaKolizji();
         }
@@ -80,7 +93,7 @@ void Gra::otworzOknoGry()
 
         grunt.poruszanieGruntu(&oknoGry);
         grunt.wyswietlgrunt(&oknoGry);
-
+        oknoGry.draw(textPunkty);
 
         oknoGry.display();
     }
