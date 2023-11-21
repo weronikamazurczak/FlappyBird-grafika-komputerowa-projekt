@@ -15,6 +15,8 @@ public:
 	void ptakInit(sf::RenderWindow* okno);
 	void grawitacjaPtak();
 	bool kolizja(Rury rury);
+	float punktyLicznik = 0.f;
+	int zliczPunkty();
 	sf::Sprite getPtakSprite();
 private:
 	float x;

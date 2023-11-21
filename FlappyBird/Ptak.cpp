@@ -71,3 +71,9 @@ bool Ptak::kolizja(Rury rury)
     return false;
 }
 
+int Ptak::zliczPunkty()
+{
+    punktyLicznik += 0.005;
+    return punktyLicznik;
+}
+

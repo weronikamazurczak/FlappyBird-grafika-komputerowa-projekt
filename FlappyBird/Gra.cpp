@@ -76,6 +76,7 @@ void Gra::otworzOknoGry()
             ptak.skacz(&oknoGry);
 
         }
+        textPunkty.setString(std::to_string(ptak.zliczPunkty()));
         oknoGry.clear();
         oknoGry.draw(tloSprite);
        
