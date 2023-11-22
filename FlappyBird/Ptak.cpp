@@ -53,20 +53,37 @@ sf::Sprite Ptak::getPtakSprite()
 
 bool Ptak::kolizja(Rury rury)
 {
-    const sf::FloatRect ptakRect = ptakSprite.getGlobalBounds();
+    const sf::FloatRect ptakRect = ptak1Sprite.getGlobalBounds();
 
+    // SprawdŸ kolizjê z górnymi rurami
+    for (auto& element : rury.getRuraGoraVektor())
+    {
+        if (ptakRect.intersects(element.getGlobalBounds()))
+        {
+            return true;
+        }
+    }
 
+    // SprawdŸ kolizjê z dolnymi rurami
+    for (auto& element : rury.getRuraDolVektor())
+    {
+        if (ptakRect.intersects(element.getGlobalBounds()))
+        {
+            return true;
+        }
+    }
+
+    // SprawdŸ kolizjê z górn¹ granic¹ okna
     if (y < 10)
+    {
         return true;
+    }
+
+    // SprawdŸ kolizjê z doln¹ granic¹ okna
     if (y >= 695)
+    {
         return true;
-
-    for (auto& ruraGora : rury.getRuraGoraVektor())
-        return ptakRect.intersects(ruraGora.getGlobalBounds());
-
-
-    for (auto& ruraDol : rury.getRuraDolVektor())
-        return ptakRect.intersects(ruraDol.getGlobalBounds());
+    }
 
     return false;
 }
