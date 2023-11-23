@@ -31,10 +31,13 @@ private:
 	sf::Sprite tloSprite;
 	sf::Font font;
 	sf::Text tekstPrzegranaGra;
+	sf::Texture koniecTexture;
+	sf::Sprite koniecSprite;
 	int punkty = 0;
 	sf::Text textPunkty;
 	void inneParametry(sf::RenderWindow* okno);
 	Ptak ptak;
 	Grunt grunt;
 	Rury rury;
+	sf::Music muzyka;
 };

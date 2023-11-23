@@ -11,17 +11,32 @@ Gra::Gra()
         std::cout << "Blad wczytania tekstury tla aplikacji!" << std::endl;
     }
 
-    sf::Music muzyka;
-    muzyka.openFromFile("INNE/sound/Schnappi_mit_Untertitel.wav");
-    muzyka.play();
-    std::cout << "jhksjdf" << std::endl;
+    if (!muzyka.openFromFile("INNE/sound/Schnappi_mit_Untertitel.wav"))
+    {
+        std::cout << "Blad wczytania pliku muzycznego!" << std::endl;
+    }
+    else
+    {
+        muzyka.play();
+    }
+
+    if (koniecTexture.loadFromFile("INNE/img/gameover.png"))
+    {
+        koniecSprite.setTexture(koniecTexture);
+    }
+    else
+    {
+        std::cout << "Blad wczytania tekstury!" << std::endl;
+    }
+
 }
 
 void Gra::wyswietl(sf::RenderWindow* okno)
 {
     okno->clear();
-    okno->draw(tloSprite);
+    okno->draw(koniecSprite);
     okno->display();
+
 }
 
 void Gra::inneParametry(sf::RenderWindow* glowneOkno)
@@ -49,10 +64,8 @@ void Gra::inneParametry(sf::RenderWindow* glowneOkno)
     textPunkty.setFillColor(sf::Color::Red);
     textPunkty.setString(std::to_string(punkty));
 
-    tekstPrzegranaGra.setCharacterSize(26);
-    tekstPrzegranaGra.setPosition(100, 120);
-    tekstPrzegranaGra.setFillColor(sf::Color::Red);
-    tekstPrzegranaGra.setString("Przegrano gre!!!, nacisnij spacje aby zaczac gre");
+    
+
 }
 
 
