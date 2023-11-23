@@ -23,6 +23,8 @@ private:
 	sf::Texture tloTextureGetReady;
 	sf::Sprite tloGetReadySprite;
 
+	sf::Texture tloTextureHowToPlay;
+	sf::Sprite tloSpriteHowToPlay;
 
 	sf::Texture tytulTexture;
 	sf::Sprite tytulSprite;

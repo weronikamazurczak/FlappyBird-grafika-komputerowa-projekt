@@ -13,12 +13,6 @@ MenuGry::MenuGry()
         std::cout << "Blad wczytania tekstury tla aplikacji!" << std::endl;
     }
 
-
-
-
-    
-
-
     if (tytulTexture.loadFromFile("INNE/img/title.png"))
     {
         tytulSprite.setTexture(tytulTexture);
@@ -28,7 +22,6 @@ MenuGry::MenuGry()
         std::cout << "Blad wczytania tekstury tytulu!" << std::endl;
     }
 
-
     if (przyciskStartTexture.loadFromFile("INNE/img/PlayButton.png"))
     {
         przyciskStartSprite.setTexture(przyciskStartTexture);
@@ -37,7 +30,6 @@ MenuGry::MenuGry()
     {
         std::cout << "Blad wczytania tekstury przycisku!" << std::endl;
     }
-     
     
     if (font.loadFromFile("INNE/fonts/FlappyBirdy.ttf"))
     {
@@ -48,7 +40,6 @@ MenuGry::MenuGry()
         std::cout << "Blad wczytania czcionki" << std::endl;
     } 
 
-
     if (tloTextureInstr.loadFromFile("INNE/img/BackgroundNight.png"))
     {
         tloTextureInstr.setSmooth(true);
@@ -57,22 +48,31 @@ MenuGry::MenuGry()
     }
     else
     {
-        std::cout << "Blad wczytania tekstury tla aplikacji!" << std::endl;
+        std::cout << "Blad wczytania tekstury tla!" << std::endl;
     }
 
     if (tloTextureGetReady.loadFromFile("INNE/img/GetReady.png"))
     {
         tloTextureGetReady.setSmooth(true);
         tloGetReadySprite.setTexture(tloTextureGetReady);
-
+        tloGetReadySprite.setScale(2.0f, 2.0f);
     }
     else
     {
-        std::cout << "Blad wczytania tekstury tla aplikacji!" << std::endl;
+        std::cout << "Blad wczytania tekstury!" << std::endl;
     }
 
-
-
+    
+    if (tloTextureHowToPlay.loadFromFile("INNE/img/howToPlay.png"))
+    {
+        tloTextureHowToPlay.setSmooth(true);
+        tloSpriteHowToPlay.setTexture(tloTextureHowToPlay);
+    }
+    else
+    {
+        std::cout << "Blad wczytania tekstury!" << std::endl;
+    }
+    
 
 
 
@@ -176,7 +176,7 @@ void MenuGry::otworzInstrukcje()
 
     
     tloGetReadySprite.setPosition(oknoInstrukcji.getSize().x / 2, oknoInstrukcji.getSize().y / 2);
-
+  
 
     while (oknoInstrukcji.isOpen())
     {
@@ -191,6 +191,7 @@ void MenuGry::otworzInstrukcje()
         oknoInstrukcji.clear();
         oknoInstrukcji.draw(tloInstrSprite);
         oknoInstrukcji.draw(tloGetReadySprite);
+        oknoInstrukcji.draw(tloSpriteHowToPlay);
         oknoInstrukcji.display();
     }
 }
