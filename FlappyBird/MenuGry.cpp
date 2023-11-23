@@ -55,7 +55,7 @@ MenuGry::MenuGry()
     {
         tloTextureGetReady.setSmooth(true);
         tloGetReadySprite.setTexture(tloTextureGetReady);
-        tloGetReadySprite.setScale(2.0f, 2.0f);
+        //tloGetReadySprite.setScale(2.0f, 2.0f);
     }
     else
     {
@@ -67,6 +67,7 @@ MenuGry::MenuGry()
     {
         tloTextureHowToPlay.setSmooth(true);
         tloSpriteHowToPlay.setTexture(tloTextureHowToPlay);
+      //  tloGetReadySprite.setScale(4.0f, 4.0f);
     }
     else
     {
@@ -175,8 +176,9 @@ void MenuGry::otworzInstrukcje()
     tekstInstrukcji.setFillColor(sf::Color::White);
 
     
-    tloGetReadySprite.setPosition(oknoInstrukcji.getSize().x / 2, oknoInstrukcji.getSize().y / 2);
-  
+    tloGetReadySprite.setPosition(oknoInstrukcji.getSize().x / 2 - tloGetReadySprite.getGlobalBounds().width / 2, tloGetReadySprite.getGlobalBounds().height / 2);
+
+    tloSpriteHowToPlay.setPosition(oknoInstrukcji.getSize().x / 2 - tloSpriteHowToPlay.getGlobalBounds().width / 2, oknoInstrukcji.getSize().y / 2 - tloSpriteHowToPlay.getGlobalBounds().height / 2);
 
     while (oknoInstrukcji.isOpen())
     {
