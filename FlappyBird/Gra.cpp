@@ -90,7 +90,7 @@ void Gra::otworzOknoGry()
 
             }
 
-
+            punktyKoncowe = ptak.zliczPunkty();
             textPunkty.setString(std::to_string(ptak.zliczPunkty()));
             oknoGry.clear();
             oknoGry.draw(tloSprite);
@@ -125,7 +125,7 @@ void Gra::otworzOknoGry()
                 oknoGry.display();
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
                 {
-                    
+                    zapisywaniePunktow(punktyKoncowe);
                     ptak.ptakInit(&oknoGry);
                     rury.resetRury();
                     punkty = 0;
@@ -136,4 +136,11 @@ void Gra::otworzOknoGry()
                 }
             }
     }
+}
+
+void Gra::zapisywaniePunktow(int punktyKoncowe) {
+    std::fstream plik;
+    plik.open("punkty.txt", std::ios::app);
+    plik << "Ilosc punktow : " << punktyKoncowe << std::endl;
+    plik.close();
 }

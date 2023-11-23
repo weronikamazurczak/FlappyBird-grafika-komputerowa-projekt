@@ -2,7 +2,6 @@
 
 Ptak::Ptak()
 {
-    //iteratorAminacji = 0;
     if (ptak1Texture.loadFromFile("INNE/img/bird-01.png"))
     {
         ptak1Sprite.setTexture(ptak1Texture);
@@ -11,8 +10,32 @@ Ptak::Ptak()
     {
         std::cout << "Blad wczytania tekstury ptaka 1 w aplikacji!" << std::endl;
     }
+
+    if (ptak2Texture.loadFromFile("INNE/img/bird-02.png"))
+    {
+    }
+    else
+    {
+        std::cout << "Blad wczytania tekstury ptaka 2 w aplikacji!" << std::endl;
+    }
+
+    if (ptak3Texture.loadFromFile("INNE/img/bird-03.png"))
+    {
+    }
+    else
+    {
+        std::cout << "Blad wczytania tekstury ptaka 3 w aplikacji!" << std::endl;
+    }
+
+    if (ptak4Texture.loadFromFile("INNE/img/bird-04.png"))
+    {
+    }
+    else
+    {
+        std::cout << "Blad wczytania tekstury ptaka 4 w aplikacji!" << std::endl;
+    }
+
     
-    //ptakSprite.setTexture(ramkaAnimacji.at(iteratorAminacji));
 }
 
 void Ptak::ptakInit(sf::RenderWindow* okno) {
@@ -25,6 +48,17 @@ void Ptak::przemiescPtakaDoPrzodu(sf::RenderWindow* okno)
 {
 
     ptak1Sprite.setPosition(x, y);
+    if (numerPtaka > 4) numerPtaka = 1;
+    licznikPtakow++;
+    if (licznikPtakow % 10 == 0) {
+        numerPtaka++;
+        switch (numerPtaka) {
+        case 1: ptak1Texture.swap(ptak1Texture);
+        case 2: ptak1Texture.swap(ptak2Texture);
+        case 3: ptak1Texture.swap(ptak3Texture);
+        case 4: ptak1Texture.swap(ptak4Texture);
+        }
+    }
 
 }
 void Ptak::draw(sf::RenderWindow* okno) {

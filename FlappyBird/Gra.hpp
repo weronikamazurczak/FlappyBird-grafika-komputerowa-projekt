@@ -18,8 +18,10 @@ public:
 		GAME_STATE = 0,
 		GAME_OVER_STATE = 1
 	};
+	void zapisywaniePunktow(int punkty);
 private:
 	int stanGry = GAME_STATE;
+	int punktyKoncowe = 0;
 	sf::Clock clock;
 	sf::Texture tloTexture;
 	sf::Sprite tloSprite;

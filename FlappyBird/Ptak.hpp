@@ -3,7 +3,6 @@
 #include <fstream>
 #include "Rury.hpp"
 
-//#include <vector>
 #define GRAWITACJAPTAKA 3.0
 #define SKOKPTAKA 12.0
 class Ptak {
@@ -19,11 +18,13 @@ public:
 	int zliczPunkty();
 	sf::Sprite getPtakSprite();
 	void resetLicznik();
+	int licznikPtakow;
+	int numerPtaka = 1;
+
 private:
 	float x=0;
 	float y=0;
 	sf::Sprite ptakSprite;
-	//std::vector<sf::Texture > ramkaAnimacji;
 
 	unsigned int iteratorAminacji;
 
