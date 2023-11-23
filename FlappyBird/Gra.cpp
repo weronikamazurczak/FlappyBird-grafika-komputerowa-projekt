@@ -22,7 +22,9 @@ Gra::Gra()
 
     if (koniecTexture.loadFromFile("INNE/img/gameover.png"))
     {
+        koniecTexture.setSmooth(true);
         koniecSprite.setTexture(koniecTexture);
+        koniecSprite.setScale(2.0f, 2.0f);
     }
     else
     {
@@ -33,10 +35,10 @@ Gra::Gra()
 
 void Gra::wyswietl(sf::RenderWindow* okno)
 {
+    
     okno->clear();
-    okno->draw(koniecSprite);
+    okno->draw(tloSprite);
     okno->display();
-
 }
 
 void Gra::inneParametry(sf::RenderWindow* glowneOkno)
@@ -61,7 +63,7 @@ void Gra::inneParametry(sf::RenderWindow* glowneOkno)
     }
     textPunkty.setCharacterSize(80);
     textPunkty.setPosition(20,20);
-    textPunkty.setFillColor(sf::Color::Red);
+    textPunkty.setFillColor(sf::Color::White);
     textPunkty.setString(std::to_string(punkty));
 
     
@@ -133,14 +135,23 @@ void Gra::otworzOknoGry()
         }
            
             if (stanGry == GAME_OVER_STATE) {
+                
                 oknoGry.clear();
+                
+                // Ustawiamy punkt odniesienia sprite'a na jego œrodek
+                koniecSprite.setOrigin(koniecSprite.getLocalBounds().width / 2.0f, koniecSprite.getLocalBounds().height / 2.0f);
+
+                // Teraz ustawiamy pozycjê sprite'a na œrodek okna gry
+                koniecSprite.setPosition(sf::Vector2f(oknoGry.getSize().x / 2.0f, oknoGry.getSize().y / 2.0f - 55.0f));
+
                 oknoGry.draw(tloSprite);
                 rury.wyswietlRury(&oknoGry);
                 ptak.draw(&oknoGry);
                 grunt.wyswietlgrunt(&oknoGry);
-                oknoGry.draw(tekstPrzegranaGra);
+                oknoGry.draw(koniecSprite);
                 oknoGry.draw(textPunkty);
                 oknoGry.display();
+
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
                 {
                     zapisywaniePunktow(punktyKoncowe);
