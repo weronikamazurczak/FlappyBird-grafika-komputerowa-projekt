@@ -38,3 +38,4 @@ Ilosc punktow : 4
 Ilosc punktow : 0
 Ilosc punktow : 0
 Ilosc punktow : 2
+Ilosc punktow : 1

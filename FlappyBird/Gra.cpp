@@ -35,7 +35,6 @@ Gra::Gra()
 
 void Gra::wyswietl(sf::RenderWindow* okno)
 {
-    
     okno->clear();
     okno->draw(tloSprite);
     okno->display();
@@ -65,11 +64,7 @@ void Gra::inneParametry(sf::RenderWindow* glowneOkno)
     textPunkty.setPosition(20,20);
     textPunkty.setFillColor(sf::Color::White);
     textPunkty.setString(std::to_string(punkty));
-
-    
-
 }
-
 
 
 void Gra::obslugaKolizji()
@@ -99,11 +94,6 @@ void Gra::otworzOknoGry()
             float currentTime = clock.restart().asSeconds();
             float fps = 1.f / (currentTime);
 
-            // std::cout << "FPS: " << fps << std::endl;
-
-
-
-
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
             {
                 ptak.skacz(&oknoGry);
@@ -116,10 +106,10 @@ void Gra::otworzOknoGry()
             oknoGry.draw(tloSprite);
 
 
-
             ptak.przemiescPtakaDoPrzodu(&oknoGry);
             ptak.grawitacjaPtak();
             ptak.draw(&oknoGry);
+
 
             rury.poruszanieRur(&oknoGry);
             rury.wyswietlRury(&oknoGry);
@@ -135,15 +125,9 @@ void Gra::otworzOknoGry()
         }
            
             if (stanGry == GAME_OVER_STATE) {
-                
                 oknoGry.clear();
-                
-                // Ustawiamy punkt odniesienia sprite'a na jego œrodek
                 koniecSprite.setOrigin(koniecSprite.getLocalBounds().width / 2.0f, koniecSprite.getLocalBounds().height / 2.0f);
-
-                // Teraz ustawiamy pozycjê sprite'a na œrodek okna gry
                 koniecSprite.setPosition(sf::Vector2f(oknoGry.getSize().x / 2.0f, oknoGry.getSize().y / 2.0f - 55.0f));
-
                 oknoGry.draw(tloSprite);
                 rury.wyswietlRury(&oknoGry);
                 ptak.draw(&oknoGry);

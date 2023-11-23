@@ -137,10 +137,7 @@ void MenuGry::obsluga(sf::RenderWindow* okno)
                     Gra gra;
                     gra.otworzOknoGry();
                 }
-
             }
-           
-            
         }
     }
 }
@@ -174,9 +171,7 @@ void MenuGry::otworzInstrukcje()
     tekstInstrukcji.setCharacterSize(24);  
     tekstInstrukcji.setFillColor(sf::Color::White);
 
-    
     tloGetReadySprite.setPosition(oknoInstrukcji.getSize().x / 2 - tloGetReadySprite.getGlobalBounds().width / 2, tloGetReadySprite.getGlobalBounds().height / 2);
-
     tloSpriteHowToPlay.setPosition(oknoInstrukcji.getSize().x / 2 - tloSpriteHowToPlay.getGlobalBounds().width / 2, oknoInstrukcji.getSize().y / 2 - tloSpriteHowToPlay.getGlobalBounds().height / 3.6f);
 
     while (oknoInstrukcji.isOpen())
