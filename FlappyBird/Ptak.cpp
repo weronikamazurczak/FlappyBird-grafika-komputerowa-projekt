@@ -88,4 +88,7 @@ int Ptak::zliczPunkty()
     punktyLicznik += 0.005;
     return punktyLicznik;
 }
+void Ptak::resetLicznik() {
+    punktyLicznik = 0;
+}
 

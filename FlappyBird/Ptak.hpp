@@ -18,6 +18,7 @@ public:
 	float punktyLicznik = 0.f;
 	int zliczPunkty();
 	sf::Sprite getPtakSprite();
+	void resetLicznik();
 private:
 	float x=0;
 	float y=0;

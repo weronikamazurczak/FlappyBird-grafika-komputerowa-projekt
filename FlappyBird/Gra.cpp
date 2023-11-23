@@ -129,6 +129,7 @@ void Gra::otworzOknoGry()
                     ptak.ptakInit(&oknoGry);
                     rury.resetRury();
                     punkty = 0;
+                    ptak.resetLicznik();
                     stanGry = GAME_STATE;
                     oknoGry.close();
                     otworzOknoGry();
