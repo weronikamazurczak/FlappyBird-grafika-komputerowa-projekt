@@ -4,6 +4,11 @@
 
 MenuGry::MenuGry()
 {
+    
+    sf::Music muzyka;
+    muzyka.openFromFile("INNE/sound/Schnappi_mit_Untertitel.wav");
+    muzyka.play();
+
     if (tloTexture.loadFromFile("INNE/img/sky.png"))
     {
         tloSprite.setTexture(tloTexture);
@@ -55,29 +60,23 @@ MenuGry::MenuGry()
     {
         tloTextureGetReady.setSmooth(true);
         tloGetReadySprite.setTexture(tloTextureGetReady);
-        //tloGetReadySprite.setScale(2.0f, 2.0f);
+        tloGetReadySprite.setScale(2.0f, 2.0f);
     }
     else
     {
         std::cout << "Blad wczytania tekstury!" << std::endl;
     }
-
     
     if (tloTextureHowToPlay.loadFromFile("INNE/img/howToPlay.png"))
     {
         tloTextureHowToPlay.setSmooth(true);
         tloSpriteHowToPlay.setTexture(tloTextureHowToPlay);
-      //  tloGetReadySprite.setScale(4.0f, 4.0f);
+        tloSpriteHowToPlay.setScale(2.5f, 2.5f);
     }
     else
     {
         std::cout << "Blad wczytania tekstury!" << std::endl;
     }
-    
-
-
-
-
 
     if (font2.loadFromFile("INNE/fonts/Aleo-Regular.otf"))
     {
@@ -178,7 +177,7 @@ void MenuGry::otworzInstrukcje()
     
     tloGetReadySprite.setPosition(oknoInstrukcji.getSize().x / 2 - tloGetReadySprite.getGlobalBounds().width / 2, tloGetReadySprite.getGlobalBounds().height / 2);
 
-    tloSpriteHowToPlay.setPosition(oknoInstrukcji.getSize().x / 2 - tloSpriteHowToPlay.getGlobalBounds().width / 2, oknoInstrukcji.getSize().y / 2 - tloSpriteHowToPlay.getGlobalBounds().height / 2);
+    tloSpriteHowToPlay.setPosition(oknoInstrukcji.getSize().x / 2 - tloSpriteHowToPlay.getGlobalBounds().width / 2, oknoInstrukcji.getSize().y / 2 - tloSpriteHowToPlay.getGlobalBounds().height / 3.6f);
 
     while (oknoInstrukcji.isOpen())
     {

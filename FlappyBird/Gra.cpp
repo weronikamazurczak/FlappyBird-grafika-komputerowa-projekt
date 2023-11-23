@@ -10,6 +10,11 @@ Gra::Gra()
     {
         std::cout << "Blad wczytania tekstury tla aplikacji!" << std::endl;
     }
+
+    sf::Music muzyka;
+    muzyka.openFromFile("INNE/sound/Schnappi_mit_Untertitel.wav");
+    muzyka.play();
+    std::cout << "jhksjdf" << std::endl;
 }
 
 void Gra::wyswietl(sf::RenderWindow* okno)
