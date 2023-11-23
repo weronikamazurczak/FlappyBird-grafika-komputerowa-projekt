@@ -16,6 +16,14 @@ private:
 	sf::Texture tloTexture;
 	sf::Sprite tloSprite;
 
+
+	sf::Texture tloTextureInstr;
+	sf::Sprite tloInstrSprite;
+
+	sf::Texture tloTextureGetReady;
+	sf::Sprite tloGetReadySprite;
+
+
 	sf::Texture tytulTexture;
 	sf::Sprite tytulSprite;
 

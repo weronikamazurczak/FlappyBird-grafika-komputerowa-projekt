@@ -14,6 +14,11 @@ MenuGry::MenuGry()
     }
 
 
+
+
+    
+
+
     if (tytulTexture.loadFromFile("INNE/img/title.png"))
     {
         tytulSprite.setTexture(tytulTexture);
@@ -42,6 +47,35 @@ MenuGry::MenuGry()
     {
         std::cout << "Blad wczytania czcionki" << std::endl;
     } 
+
+
+    if (tloTextureInstr.loadFromFile("INNE/img/BackgroundNight.png"))
+    {
+        tloTextureInstr.setSmooth(true);
+        tloInstrSprite.setTexture(tloTextureInstr);
+        tloInstrSprite.setScale(2.0f, 2.0f);
+    }
+    else
+    {
+        std::cout << "Blad wczytania tekstury tla aplikacji!" << std::endl;
+    }
+
+    if (tloTextureGetReady.loadFromFile("INNE/img/GetReady.png"))
+    {
+        tloTextureGetReady.setSmooth(true);
+        tloGetReadySprite.setTexture(tloTextureGetReady);
+
+    }
+    else
+    {
+        std::cout << "Blad wczytania tekstury tla aplikacji!" << std::endl;
+    }
+
+
+
+
+
+
 
 
     if (font2.loadFromFile("INNE/fonts/Aleo-Regular.otf"))
@@ -115,7 +149,8 @@ void MenuGry::obsluga(sf::RenderWindow* okno)
 void MenuGry::otworzInstrukcje()
 {
     //okna isntr
-    sf::RenderWindow oknoInstrukcji(sf::VideoMode(800, 600), "Instrukcja");
+    sf::RenderWindow oknoInstrukcji(sf::VideoMode(550, 600), "Instrukcja");
+    
 
     std::ifstream plik("INNE/instrukcja.txt");
     std::string trescInstrukcji;
@@ -140,6 +175,8 @@ void MenuGry::otworzInstrukcje()
     tekstInstrukcji.setFillColor(sf::Color::White);
 
     
+    tloGetReadySprite.setPosition(oknoInstrukcji.getSize().x / 2, oknoInstrukcji.getSize().y / 2);
+
 
     while (oknoInstrukcji.isOpen())
     {
@@ -152,7 +189,8 @@ void MenuGry::otworzInstrukcje()
             }
         }
         oknoInstrukcji.clear();
-        oknoInstrukcji.draw(tekstInstrukcji);
+        oknoInstrukcji.draw(tloInstrSprite);
+        oknoInstrukcji.draw(tloGetReadySprite);
         oknoInstrukcji.display();
     }
 }

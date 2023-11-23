@@ -5,3 +5,7 @@ Ilosc punktow : 0
 Ilosc punktow : 1
 Ilosc punktow : 0
 Ilosc punktow : 2
+Ilosc punktow : 1
+Ilosc punktow : 6
+Ilosc punktow : 1
+Ilosc punktow : 0
