@@ -41,7 +41,7 @@ Rury::Rury()
         std::cout << "Blad wczytania tekstury rura dol w aplikacji!" << std::endl;
     }
 
-    // rura do punktow ale nie wiem czy bedzie potrzebna, niech bedzie na razie
+
     if (ruraPunktowaTexture.loadFromFile("INNE/img/InvisibleScoringPipe.png"))
     {
         ruraPunktowaSprite.setTexture(ruraPunktowaTexture);
@@ -50,6 +50,20 @@ Rury::Rury()
     else
     {
         std::cout << "Blad wczytania tekstury rura punktowa w aplikacji!" << std::endl;
+    }
+}
+
+void Rury::resetRury() {
+    for (int i = 0; i < 3; i++)
+    {
+        int wysokosRURAdol = 0 - rand() % 50;
+
+        while (((763 - ruraGoraVektor.at(i).getPosition().y + wysokosRURAdol) > 220) &&
+            ruraGoraVektor.at(i).getPosition().y >= 523) {
+            wysokosRURAdol = 0 - rand() % 100;
+        }
+        ruraDolSprite.setPosition(i * 320.0f, wysokosRURAdol);
+        ruraDolVektor.push_back(ruraDolSprite);
     }
 }
 

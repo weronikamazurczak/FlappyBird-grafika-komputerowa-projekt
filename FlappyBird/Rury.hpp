@@ -9,6 +9,7 @@ public:
 	Rury();
 
 	void poruszanieRur(sf::RenderWindow* okno);
+	void resetRury();
 	void wyswietlRury(sf::RenderWindow* okno);
 	std::vector<sf::Sprite> getRuraDolVektor();
 	std::vector<sf::Sprite> getRuraGoraVektor();

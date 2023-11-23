@@ -31,71 +31,108 @@ void Gra::inneParametry(sf::RenderWindow* glowneOkno)
     {
         std::cout << "Blad wczytania czcionki" << std::endl;
     }
+    if (font.loadFromFile("INNE/fonts/ArialBold.ttf"))
+    {
+        tekstPrzegranaGra.setFont(font);
+    }
+    else
+    {
+        std::cout << "Blad wczytania czcionki" << std::endl;
+    }
     textPunkty.setCharacterSize(80);
     textPunkty.setPosition(20,20);
     textPunkty.setFillColor(sf::Color::Red);
     textPunkty.setString(std::to_string(punkty));
+
+    tekstPrzegranaGra.setCharacterSize(26);
+    tekstPrzegranaGra.setPosition(100, 120);
+    tekstPrzegranaGra.setFillColor(sf::Color::Red);
+    tekstPrzegranaGra.setString("Przegrano gre!!!, nacisnij spacje aby zaczac gre");
 }
 
 
 
 void Gra::obslugaKolizji()
 {
-    // Tutaj mo¿esz dodaæ kod obs³ugi kolizji, np. zatrzymanie gry, reset pozycji ptaka itp.
     std::cout << "Kolizja! Gra zatrzymana lub resetuj pozycjê ptaka.\n";
-    // Przyk³adowy kod:
-    // gameState = GameState::GameOver;
-    // ptak.resetPosition();
+    stanGry = GAME_OVER_STATE;
 }
 void Gra::otworzOknoGry()
 {
     sf::RenderWindow oknoGry(sf::VideoMode(768, 1024), "Gra", sf::Style::Titlebar | sf::Style::Close);
+    sf::Event event;
 
-    sf::Clock clock;
     inneParametry(&oknoGry);
-
+    
     while (oknoGry.isOpen())
     {
-        float currentTime = clock.restart().asSeconds();
-        float fps = 1.f / (currentTime);
-
-        // std::cout << "FPS: " << fps << std::endl;
-
-        sf::Event event;
-
         while (oknoGry.pollEvent(event))
         {
+
             if (event.type == sf::Event::Closed)
             {
                 oknoGry.close();
             }
 
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-        {
-            ptak.skacz(&oknoGry);
+        if (stanGry == GAME_STATE) {
+            float currentTime = clock.restart().asSeconds();
+            float fps = 1.f / (currentTime);
 
+            // std::cout << "FPS: " << fps << std::endl;
+
+
+
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+            {
+                ptak.skacz(&oknoGry);
+
+            }
+
+
+            textPunkty.setString(std::to_string(ptak.zliczPunkty()));
+            oknoGry.clear();
+            oknoGry.draw(tloSprite);
+
+
+
+            ptak.przemiescPtakaDoPrzodu(&oknoGry);
+            ptak.grawitacjaPtak();
+            ptak.draw(&oknoGry);
+
+            rury.poruszanieRur(&oknoGry);
+            rury.wyswietlRury(&oknoGry);
+
+
+            grunt.poruszanieGruntu(&oknoGry);
+            grunt.wyswietlgrunt(&oknoGry);
+            if (ptak.kolizja(rury)) {
+                obslugaKolizji();
+            }
+            oknoGry.draw(textPunkty);
+            oknoGry.display();
         }
-        textPunkty.setString(std::to_string(ptak.zliczPunkty()));
-        oknoGry.clear();
-        oknoGry.draw(tloSprite);
-       
-        if (ptak.kolizja(rury)) {
-            obslugaKolizji();
-        }
-
-        ptak.przemiescPtakaDoPrzodu(&oknoGry);
-        ptak.grawitacjaPtak();
-        ptak.draw(&oknoGry);
-
-        rury.poruszanieRur(&oknoGry);
-        rury.wyswietlRury(&oknoGry);
-
-
-        grunt.poruszanieGruntu(&oknoGry);
-        grunt.wyswietlgrunt(&oknoGry);
-        oknoGry.draw(textPunkty);
-
-        oknoGry.display();
+           
+            if (stanGry == GAME_OVER_STATE) {
+                oknoGry.clear();
+                oknoGry.draw(tloSprite);
+                rury.wyswietlRury(&oknoGry);
+                ptak.draw(&oknoGry);
+                grunt.wyswietlgrunt(&oknoGry);
+                oknoGry.draw(tekstPrzegranaGra);
+                oknoGry.draw(textPunkty);
+                oknoGry.display();
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+                {
+                    
+                    ptak.ptakInit(&oknoGry);
+                    rury.resetRury();
+                    punkty = 0;
+                    stanGry = GAME_STATE;
+                    oknoGry.close();
+                    otworzOknoGry();
+                }
+            }
     }
 }

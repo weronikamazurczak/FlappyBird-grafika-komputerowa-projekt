@@ -4,8 +4,8 @@
 #include "Rury.hpp"
 
 //#include <vector>
-#define GRAWITACJAPTAKA 5.0
-#define SKOKPTAKA 20.0
+#define GRAWITACJAPTAKA 3.0
+#define SKOKPTAKA 12.0
 class Ptak {
 public:
 	Ptak();
@@ -19,8 +19,8 @@ public:
 	int zliczPunkty();
 	sf::Sprite getPtakSprite();
 private:
-	float x;
-	float y;
+	float x=0;
+	float y=0;
 	sf::Sprite ptakSprite;
 	//std::vector<sf::Texture > ramkaAnimacji;
 

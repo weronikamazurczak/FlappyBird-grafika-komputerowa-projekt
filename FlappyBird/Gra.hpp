@@ -14,11 +14,17 @@ public:
 	void wyswietl(sf::RenderWindow* okno);
 	void otworzOknoGry();
 	void obslugaKolizji();
-
+	enum gameState {
+		GAME_STATE = 0,
+		GAME_OVER_STATE = 1
+	};
 private:
+	int stanGry = GAME_STATE;
+	sf::Clock clock;
 	sf::Texture tloTexture;
 	sf::Sprite tloSprite;
 	sf::Font font;
+	sf::Text tekstPrzegranaGra;
 	int punkty = 0;
 	sf::Text textPunkty;
 	void inneParametry(sf::RenderWindow* okno);

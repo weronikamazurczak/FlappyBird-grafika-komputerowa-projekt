@@ -11,14 +11,13 @@ Ptak::Ptak()
     {
         std::cout << "Blad wczytania tekstury ptaka 1 w aplikacji!" << std::endl;
     }
-
+    
     //ptakSprite.setTexture(ramkaAnimacji.at(iteratorAminacji));
-
 }
 
 void Ptak::ptakInit(sf::RenderWindow* okno) {
     x = (okno->getSize().x - ptak1Sprite.getGlobalBounds().width) / 5;
-    y = okno->getSize().y - ptak1Sprite.getGlobalBounds().height - 125 * 4;
+    y = okno->getSize().y - ptak1Sprite.getGlobalBounds().height - 115 * 5;
 
 }
 
@@ -55,7 +54,6 @@ bool Ptak::kolizja(Rury rury)
 {
     const sf::FloatRect ptakRect = ptak1Sprite.getGlobalBounds();
 
-    // SprawdŸ kolizjê z górnymi rurami
     for (auto& element : rury.getRuraGoraVektor())
     {
         if (ptakRect.intersects(element.getGlobalBounds()))
@@ -64,7 +62,7 @@ bool Ptak::kolizja(Rury rury)
         }
     }
 
-    // SprawdŸ kolizjê z dolnymi rurami
+
     for (auto& element : rury.getRuraDolVektor())
     {
         if (ptakRect.intersects(element.getGlobalBounds()))
@@ -72,14 +70,11 @@ bool Ptak::kolizja(Rury rury)
             return true;
         }
     }
-
-    // SprawdŸ kolizjê z górn¹ granic¹ okna
     if (y < 10)
     {
         return true;
     }
 
-    // SprawdŸ kolizjê z doln¹ granic¹ okna
     if (y >= 695)
     {
         return true;
