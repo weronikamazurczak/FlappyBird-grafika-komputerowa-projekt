@@ -2,6 +2,9 @@
 
 using namespace std;
 
+/**
+ * @brief Konstruktor klasy Grunt. Inicjalizuje teksturê gruntu.
+ */
 Grunt::Grunt()
 {
     if (gruntTexture.loadFromFile("INNE/img/land.png"))
@@ -15,7 +18,13 @@ Grunt::Grunt()
     }
 }
 
-//problem z pierwszym przejsciem tektury pozniej jest ciagla linia
+/**
+ * @brief Porusza gruntem w grze.
+ *
+ * Ta funkcja przesuwa grunt w lewo z okreœlon¹ prêdkoœci¹. Gdy grunt opuœci ekran, jest on ponownie dodawany po prawej stronie ekranu.
+ *
+ * @param okno WskaŸnik na okno gry.
+ */
 void Grunt::poruszanieGruntu(sf::RenderWindow* okno)
 {
     const float dt = 1.0f / 100.0f;
@@ -24,9 +33,6 @@ void Grunt::poruszanieGruntu(sf::RenderWindow* okno)
     for (unsigned short int i = 0; i < gruntVektor.size(); i++)
     {
         sf::Vector2f pozycja = gruntVektor.at(i).getPosition();
-       // cout << gruntVektor.at(i).getPosition().x << endl;
-        //cout << "okno rozmiar " << okno->getSize().x << endl;
-        // Jeœli sprite dotknie lewej strony ekranu, przenieœ go na koniec wektora
         if (gruntVektor.at(i).getPosition().x < 0 && wyrenderowane!=1) {
             wyrenderowane = 1;
             nowyGruntSprite.setTexture(gruntTexture);
@@ -34,7 +40,7 @@ void Grunt::poruszanieGruntu(sf::RenderWindow* okno)
             gruntVektor.push_back(nowyGruntSprite);
             gruntVektor.at(i).setPosition(pozycja);
         }
-        else if (pozycja.x + gruntVektor.at(i).getLocalBounds().width < 0 /* || gruntVektor.at(i).getPosition().x < 0 */)
+        else if (pozycja.x + gruntVektor.at(i).getLocalBounds().width < 0 )
         {
             pozycja.x = okno->getSize().x;
             nowyGruntSprite.setTexture(gruntTexture);
@@ -47,6 +53,13 @@ void Grunt::poruszanieGruntu(sf::RenderWindow* okno)
     }
 }
 
+/**
+ * @brief Wyœwietla grunt na ekranie.
+ *
+ * Ta funkcja rysuje grunt na ekranie w okreœlonej pozycji.
+ *
+ * @param okno WskaŸnik na okno gry.
+ */
 void Grunt::wyswietlgrunt(sf::RenderWindow* okno)
 {
     for (unsigned short int i = 0; i < gruntVektor.size(); i++)

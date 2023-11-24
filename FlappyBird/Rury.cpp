@@ -2,6 +2,9 @@
 
 using namespace std;
 
+/**
+ * @brief Konstruktor klasy Rury. Inicjalizuje tekstury rur.
+ */
 Rury::Rury()
 {
     if (ruraGoraTexture.loadFromFile("INNE/img/PipeUp.png"))
@@ -45,7 +48,6 @@ Rury::Rury()
     if (ruraPunktowaTexture.loadFromFile("INNE/img/InvisibleScoringPipe.png"))
     {
         ruraPunktowaSprite.setTexture(ruraPunktowaTexture);
-        //ruraPunktowaVektor.push_back(ruraPunktowaSprite);
     }
     else
     {
@@ -53,6 +55,9 @@ Rury::Rury()
     }
 }
 
+/**
+ * @brief Resetuje rury do stanu początkowego.
+ */
 void Rury::resetRury() {
     for (int i = 0; i < 3; i++)
     {
@@ -67,6 +72,11 @@ void Rury::resetRury() {
     }
 }
 
+/**
+ * @brief Porusza rury w grze.
+ *
+ * @param okno Wskaźnik na okno gry.
+ */
 void Rury::poruszanieRur(sf::RenderWindow* okno)
 {
     const float dt = 1.0f / 100.0f;
@@ -92,6 +102,12 @@ void Rury::poruszanieRur(sf::RenderWindow* okno)
 
     }
 }
+
+/**
+ * @brief Wyświetla rury na ekranie.
+ *
+ * @param okno Wskaźnik na okno gry.
+ */
 void Rury::wyswietlRury(sf::RenderWindow* okno)
 {
     for (unsigned short int i = 0; i < ruraGoraVektor.size(); i++)
@@ -101,11 +117,21 @@ void Rury::wyswietlRury(sf::RenderWindow* okno)
     }
 }
 
+/**
+ * @brief Zwraca wektor sprite'ów dolnych rur.
+ *
+ * @return Wektor sprite'ów dolnych rur.
+ */
 std::vector<sf::Sprite> Rury::getRuraDolVektor()
 {
     return ruraDolVektor;
 }
 
+/**
+ * @brief Zwraca wektor sprite'ów górnych rur.
+ *
+ * @return Wektor sprite'ów górnych rur.
+ */
 std::vector<sf::Sprite> Rury::getRuraGoraVektor()
 {
     return ruraGoraVektor;

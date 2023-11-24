@@ -1,7 +1,9 @@
 #include "MenuGry.hpp"
 #include "Gra.hpp"
 
-
+/**
+ * @brief Konstruktor klasy MenuGry. Inicjalizuje tekstury, muzykê i inne elementy menu gry.
+ */
 MenuGry::MenuGry()
 {
     
@@ -88,6 +90,11 @@ MenuGry::MenuGry()
     }
 }
 
+/**
+ * @brief Wyœwietla menu gry.
+ *
+ * @param okno WskaŸnik na okno, w którym ma byæ wyœwietlone menu.
+ */
 void MenuGry::wyswietl(sf::RenderWindow* okno)
 {
     int margines = 100;
@@ -115,6 +122,11 @@ void MenuGry::wyswietl(sf::RenderWindow* okno)
     okno->display();
 }
 
+/**
+ * @brief Obs³uguje interakcje u¿ytkownika z menu gry.
+ *
+ * @param okno WskaŸnik na okno, w którym jest wyœwietlane menu.
+ */
 void MenuGry::obsluga(sf::RenderWindow* okno)
 {
     sf::Event event;
@@ -142,7 +154,9 @@ void MenuGry::obsluga(sf::RenderWindow* okno)
     }
 }
 
-
+/**
+ * @brief Otwiera instrukcje gry.
+ */
 void MenuGry::otworzInstrukcje()
 {
     //okna isntr

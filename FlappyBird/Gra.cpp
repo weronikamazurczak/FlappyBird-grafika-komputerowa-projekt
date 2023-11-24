@@ -1,5 +1,8 @@
 #include "Gra.hpp"
 
+/**
+ * @brief Konstruktor klasy Gra. Inicjalizuje tekstury, muzykê i inne elementy gry.
+ */
 Gra::Gra()
 {
     if (tloTexture.loadFromFile("INNE/img/sky.png"))
@@ -33,6 +36,10 @@ Gra::Gra()
 
 }
 
+/**
+ * @brief Wyœwietla grê na ekranie.
+ * @param okno WskaŸnik na okno gry.
+ */
 void Gra::wyswietl(sf::RenderWindow* okno)
 {
     okno->clear();
@@ -40,6 +47,10 @@ void Gra::wyswietl(sf::RenderWindow* okno)
     okno->display();
 }
 
+/**
+ * @brief Ustawia inne parametry dla gry.
+ * @param glowneOkno WskaŸnik na g³ówne okno gry.
+ */
 void Gra::inneParametry(sf::RenderWindow* glowneOkno)
 {
     glowneOkno->setFramerateLimit(60);
@@ -66,12 +77,21 @@ void Gra::inneParametry(sf::RenderWindow* glowneOkno)
     textPunkty.setString(std::to_string(punkty));
 }
 
-
+/**
+ * @brief Obs³uguje kolizje w grze.
+ */
 void Gra::obslugaKolizji()
 {
     std::cout << "Kolizja! Gra zatrzymana lub resetuj pozycjê ptaka.\n";
     stanGry = GAME_OVER_STATE;
 }
+
+/**
+ * @brief Otwiera okno gry i zarz¹dza logik¹ gry.
+ *
+ * Ta funkcja tworzy okno gry, obs³uguje zdarzenia i zarz¹dza stanem gry.
+ * W zale¿noœci od stanu gry, funkcja wywo³uje odpowiednie funkcje do rysowania i aktualizacji obiektów gry.
+ */
 void Gra::otworzOknoGry()
 {
     sf::RenderWindow oknoGry(sf::VideoMode(768, 1024), "Gra", sf::Style::Titlebar | sf::Style::Close);
@@ -151,6 +171,13 @@ void Gra::otworzOknoGry()
     }
 }
 
+/**
+ * @brief Zapisuje wynik koñcowy gry do pliku.
+ *
+ * Ta funkcja otwiera plik "punkty.txt" w trybie do³¹czania (append) i zapisuje do niego wynik koñcowy gry.
+ *
+ * @param punktyKoncowe Wynik koñcowy gry do zapisania.
+ */
 void Gra::zapisywaniePunktow(int punktyKoncowe) {
     std::fstream plik;
     plik.open("punkty.txt", std::ios::app);

@@ -1,9 +1,9 @@
 ﻿#include "Engine.hpp"
 
 /**
- * @brief Konstruktor obiektu Circle ustawiaj¹cy promieñ ko³a.
+ * @brief Konstruktor obiektu Circle ustawiający promień koła.
  *
- * @param radius Promieñ ko³a.
+ * @param radius Promień koła.
  */
 Engine::Circle::Circle(float radius) {
 	this->circle.setRadius(radius);
@@ -12,32 +12,32 @@ Engine::Circle::Circle(float radius) {
 /**
  * @brief Rysuje obiekt Circle na ekranie.
  *
- * Metoda ta korzysta z g³ównego okna aplikacji do narysowania ko³a.
+ * Metoda ta korzysta z głównego okna aplikacji do narysowania koła.
  */
 void Engine::Circle::draw() {
 
 }
 
 /**
- * @brief Przesuwa ko³o do podanej pozycji.
+ * @brief Przesuwa koło do podanej pozycji.
  *
- * @param position Nowa pozycja ko³a.
+ * @param position Nowa pozycja koła.
  */
 void Engine::Circle::translate(sf::Vector2f position) {
 	this->circle.setPosition(position);
 }
 
 /**
- * @brief Obraca ko³o o podany k¹t.
+ * @brief Obraca koło o podany kąt.
  *
- * @param angle K¹t rotacji.
+ * @param angle Kąt rotacji.
  */
 void Engine::Circle::rotate(float angle) {
 	this->circle.rotate(angle);
 }
 
 /**
- * @brief Skaluje ko³o na podstawie podanego wektora skali.
+ * @brief Skaluje koło na podstawie podanego wektora skali.
  *
  * @param scale Wektor skali.
  */
