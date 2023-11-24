@@ -151,10 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Gra.cpp" />
     <ClCompile Include="Grunt.cpp" />
     <ClCompile Include="MenuGry.cpp" />
+    <ClCompile Include="PrimitiveRenderer.cpp" />
     <ClCompile Include="Ptak.cpp" />
     <ClCompile Include="Rury.cpp" />
   </ItemGroup>

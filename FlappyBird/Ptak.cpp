@@ -59,7 +59,6 @@ void Ptak::przemiescPtakaDoPrzodu(sf::RenderWindow* okno)
         case 4: ptak1Texture.swap(ptak4Texture);
         }
     }
-
 }
 void Ptak::draw(sf::RenderWindow* okno) {
     okno->draw(ptak1Sprite);
