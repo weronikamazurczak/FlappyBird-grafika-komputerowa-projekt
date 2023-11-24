@@ -8,7 +8,7 @@ Flappy Bird to prosta gra 2D, w której gracz kontroluje ptaka, próbującego pr
 
 ## Instalacja
 
-Aby zainstalować grę Flappy Bird, sklonuj to repozytorium na swoim lokalnym komputerze i uruchom plik `index.html` w przeglądarce.
+Aby zainstalować grę Flappy Bird, sklonuj to repozytorium na swoim lokalnym komputerze.
 
 ```bash
 git clone https://github.com/weronikamazurczak/FlappyBird.git
