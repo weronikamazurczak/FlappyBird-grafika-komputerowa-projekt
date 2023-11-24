@@ -1,0 +1,73 @@
+\hypertarget{class_grunt}{}\doxysection{Grunt Class Reference}
+\label{class_grunt}\index{Grunt@{Grunt}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_grunt_a2a355ab4430eef8d203ac97f1f51b307}\label{class_grunt_a2a355ab4430eef8d203ac97f1f51b307}} 
+{\bfseries Grunt} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \mbox{\hyperlink{class_grunt}{Grunt}}. Inicjalizuje teksturę gruntu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grunt_a7dbf69efd38451d92b5cc3391bb1704e}{poruszanie\+Gruntu}} (sf\+::\+Render\+Window $\ast$okno)
+\begin{DoxyCompactList}\small\item\em Porusza gruntem w grze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grunt_a416d0f8fe7cc19c421b53b7cf8a3ad1b}{wyswietlgrunt}} (sf\+::\+Render\+Window $\ast$okno)
+\begin{DoxyCompactList}\small\item\em Wyświetla grunt na ekranie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_grunt_ace342278e37353c65af5b367484ac79f}\label{class_grunt_ace342278e37353c65af5b367484ac79f}} 
+int {\bfseries wyrenderowane} = 0
+\item 
+\mbox{\Hypertarget{class_grunt_aeb1a01cce586c4d3a57912599a36fabf}\label{class_grunt_aeb1a01cce586c4d3a57912599a36fabf}} 
+sf\+::\+Texture {\bfseries grunt\+Texture}
+\item 
+\mbox{\Hypertarget{class_grunt_adddc10f8430a59b1b6774a2751b4462a}\label{class_grunt_adddc10f8430a59b1b6774a2751b4462a}} 
+sf\+::\+Sprite {\bfseries grunt\+Sprite}
+\item 
+\mbox{\Hypertarget{class_grunt_abb28f07f34288f1d1ade6f4cc0763b6b}\label{class_grunt_abb28f07f34288f1d1ade6f4cc0763b6b}} 
+sf\+::\+Sprite {\bfseries nowy\+Grunt\+Sprite}
+\item 
+\mbox{\Hypertarget{class_grunt_aa92e1bdfd0d05d6450bb7fc29f4d2c0a}\label{class_grunt_aa92e1bdfd0d05d6450bb7fc29f4d2c0a}} 
+std\+::vector$<$ sf\+::\+Sprite $>$ {\bfseries grunt\+Vektor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_grunt_a7dbf69efd38451d92b5cc3391bb1704e}\label{class_grunt_a7dbf69efd38451d92b5cc3391bb1704e}} 
+\index{Grunt@{Grunt}!poruszanieGruntu@{poruszanieGruntu}}
+\index{poruszanieGruntu@{poruszanieGruntu}!Grunt@{Grunt}}
+\doxysubsubsection{\texorpdfstring{poruszanieGruntu()}{poruszanieGruntu()}}
+{\footnotesize\ttfamily void Grunt\+::poruszanie\+Gruntu (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{okno }\end{DoxyParamCaption})}
+
+
+
+Porusza gruntem w grze. 
+
+Ta funkcja przesuwa grunt w lewo z określoną prędkością. Gdy grunt opuści ekran, jest on ponownie dodawany po prawej stronie ekranu.
+
+
+\begin{DoxyParams}{Parameters}
+{\em okno} & Wskaźnik na okno gry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_grunt_a416d0f8fe7cc19c421b53b7cf8a3ad1b}\label{class_grunt_a416d0f8fe7cc19c421b53b7cf8a3ad1b}} 
+\index{Grunt@{Grunt}!wyswietlgrunt@{wyswietlgrunt}}
+\index{wyswietlgrunt@{wyswietlgrunt}!Grunt@{Grunt}}
+\doxysubsubsection{\texorpdfstring{wyswietlgrunt()}{wyswietlgrunt()}}
+{\footnotesize\ttfamily void Grunt\+::wyswietlgrunt (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{okno }\end{DoxyParamCaption})}
+
+
+
+Wyświetla grunt na ekranie. 
+
+Ta funkcja rysuje grunt na ekranie w określonej pozycji.
+
+
+\begin{DoxyParams}{Parameters}
+{\em okno} & Wskaźnik na okno gry. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Grunt.\+hpp\item 
+Grunt.\+cpp\end{DoxyCompactItemize}

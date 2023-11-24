@@ -1,0 +1,76 @@
+\hypertarget{_engine_8hpp_source}{}\doxysection{Engine.\+hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}MenuGry.hpp"{}};}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_engine}{Engine}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_ad2f3de0fda4640ed3275e57907db5f82}{ustawRozdzielczosc}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{12     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_a813ec3855a5b9b7af11f210e8efa8cf3}{inneParametry}}(sf::RenderWindow*);}
+\DoxyCodeLine{13     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_a4132117c205e81ed9428062244d270b7}{petlaGry}}();}
+\DoxyCodeLine{14     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_acf5f5c6f23ca457f4cde2442687be292}{czyszczenieOkna}}(sf::RenderWindow*, sf::Color);}
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_ad7fac822a66e2a3d0b1e386d29f02b53}{czyszczenieBitmapy}}(sf::Sprite*, sf::Color);}
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_a6600375865300e38497bc795e1c43665}{zapisywanieDoPliku}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{21     \textcolor{keyword}{class }\mbox{\hyperlink{class_engine_1_1_game_object}{GameObject}} \{}
+\DoxyCodeLine{22     \textcolor{keyword}{public}:}
+\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_1_1_game_object_a1ca26733e7e3ec45942e1a8726bd5e3e}{setX}}(\textcolor{keywordtype}{float} x);}
+\DoxyCodeLine{32         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_1_1_game_object_ad2497dfcb90ada8a121c32fef605530e}{setY}}(\textcolor{keywordtype}{float} y);}
+\DoxyCodeLine{37         \textcolor{keywordtype}{float} \mbox{\hyperlink{class_engine_1_1_game_object_a70e0e2e2dcfdd339e7b5f07b38dc7064}{getX}}();}
+\DoxyCodeLine{42         \textcolor{keywordtype}{float} \mbox{\hyperlink{class_engine_1_1_game_object_a233eb91c677b0bf36e397de46ebc166d}{getY}}();}
+\DoxyCodeLine{43     \textcolor{keyword}{private}:}
+\DoxyCodeLine{44         sf::Vector2f actualPosition;}
+\DoxyCodeLine{45     \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{50     \textcolor{keyword}{class }\mbox{\hyperlink{class_engine_1_1_drawable_object}{DrawableObject}} : \textcolor{keyword}{public} \textcolor{keyword}{virtual} \mbox{\hyperlink{class_engine_1_1_game_object}{GameObject}} \{}
+\DoxyCodeLine{51     \textcolor{keyword}{public}:}
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_1_1_drawable_object_a9270cf5117936dcc726c279f8f91910b}{draw}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{56     \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{61     \textcolor{keyword}{class }\mbox{\hyperlink{class_engine_1_1_transformable_object}{TransformableObject}} : \textcolor{keyword}{public} \textcolor{keyword}{virtual} \mbox{\hyperlink{class_engine_1_1_game_object}{GameObject}} \{}
+\DoxyCodeLine{62     \textcolor{keyword}{public}:}
+\DoxyCodeLine{67         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_1_1_transformable_object_a7d8fcc430aa402b780a0d1fa0331bb52}{translate}}(sf::Vector2f position);}
+\DoxyCodeLine{72         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_1_1_transformable_object_a8d1bd158aa273460870d0dbd9bd4062b}{rotate}}(\textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{77         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_1_1_transformable_object_a1de2b119e78e40fa3e56e483e83ee993}{scale}}(sf::Vector2f \mbox{\hyperlink{class_engine_1_1_transformable_object_a1de2b119e78e40fa3e56e483e83ee993}{scale}});}
+\DoxyCodeLine{78     \};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{83     \textcolor{keyword}{class }\mbox{\hyperlink{class_engine_1_1_shape_object}{ShapeObject}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_engine_1_1_drawable_object}{DrawableObject}}, \mbox{\hyperlink{class_engine_1_1_transformable_object}{TransformableObject}} \{}
+\DoxyCodeLine{84     \textcolor{keyword}{public}:}
+\DoxyCodeLine{85         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} draw() \{\};}
+\DoxyCodeLine{86         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} translate(sf::Vector2f position) \{\};}
+\DoxyCodeLine{87         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} rotate(\textcolor{keywordtype}{float} angle) \{\};}
+\DoxyCodeLine{88         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} scale(sf::Vector2f scale) \{\};}
+\DoxyCodeLine{89     \};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{94     \textcolor{keyword}{class }\mbox{\hyperlink{class_engine_1_1_circle}{Circle}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_engine_1_1_shape_object}{ShapeObject}} \{}
+\DoxyCodeLine{95     \textcolor{keyword}{public}:}
+\DoxyCodeLine{100         \mbox{\hyperlink{class_engine_1_1_circle_a4f74671a565f3ccfb49e1368cc67e409}{Circle}}(\textcolor{keywordtype}{float} radius);}
+\DoxyCodeLine{101         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_1_1_circle_a459a9aef03638662fc8b3e9020590998}{draw}}();}
+\DoxyCodeLine{102         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_1_1_circle_a90c8d8d9dea4bfa5c702bca9a7591a88}{translate}}(sf::Vector2f position);}
+\DoxyCodeLine{103         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_1_1_circle_aa6d61d135af33e770d4d9f1dbdf89401}{rotate}}(\textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{104         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_1_1_circle_a6bc0bcd67c807b4b330589fb6ea9b3e4}{scale}}(sf::Vector2f \mbox{\hyperlink{class_engine_1_1_circle_a6bc0bcd67c807b4b330589fb6ea9b3e4}{scale}});}
+\DoxyCodeLine{105         sf::CircleShape circle;}
+\DoxyCodeLine{106     \};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{keyword}{class }\mbox{\hyperlink{class_engine_1_1_primitive_renderer}{PrimitiveRenderer}} \{}
+\DoxyCodeLine{109     \textcolor{keyword}{public}:}
+\DoxyCodeLine{110         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_engine_1_1_primitive_renderer_a68e4a48b9136c1261d381e09cdfba814}{rysujOkrag}}(\textcolor{keywordtype}{float} radius, sf::Vector2f position, sf::Color color);}
+\DoxyCodeLine{111         \textcolor{comment}{//void rysujSymetrycznyOkrag(float radius, sf::Color color);}}
+\DoxyCodeLine{112     \};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{keyword}{private}:}
+\DoxyCodeLine{116     \textcolor{keywordtype}{int} szerokosc, wysokosc;}
+\DoxyCodeLine{117     \mbox{\hyperlink{class_menu_gry}{MenuGry}} menu; }
+\DoxyCodeLine{118 \};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+
+\end{DoxyCode}

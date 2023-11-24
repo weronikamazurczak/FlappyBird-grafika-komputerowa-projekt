@@ -1,0 +1,135 @@
+\hypertarget{class_engine}{}\doxysection{Engine Class Reference}
+\label{class_engine}\index{Engine@{Engine}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_engine_1_1_circle}{Circle}}
+\begin{DoxyCompactList}\small\item\em Klasa reprezentująca okrąg. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_drawable_object}{Drawable\+Object}}
+\begin{DoxyCompactList}\small\item\em Klasa reprezentująca obiekt, który można narysować. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_game_object}{Game\+Object}}
+\begin{DoxyCompactList}\small\item\em Klasa reprezentująca obiekt gry. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_primitive_renderer}{Primitive\+Renderer}}
+\item 
+class \mbox{\hyperlink{class_engine_1_1_shape_object}{Shape\+Object}}
+\begin{DoxyCompactList}\small\item\em Klasa reprezentująca obiekt kształtu, który można narysować i przekształcić. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_transformable_object}{Transformable\+Object}}
+\begin{DoxyCompactList}\small\item\em Klasa reprezentująca obiekt, który można przekształcić. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_engine_ad2f3de0fda4640ed3275e57907db5f82}{ustaw\+Rozdzielczosc}} (int, int)
+\begin{DoxyCompactList}\small\item\em Ustawia rozdzielczość silnika gry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_a813ec3855a5b9b7af11f210e8efa8cf3}{inne\+Parametry}} (sf\+::\+Render\+Window $\ast$)
+\begin{DoxyCompactList}\small\item\em Ustawia inne parametry dla głównego okna gry. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_engine_a4132117c205e81ed9428062244d270b7}\label{class_engine_a4132117c205e81ed9428062244d270b7}} 
+void {\bfseries petla\+Gry} ()
+\begin{DoxyCompactList}\small\item\em Główna pętla gry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_acf5f5c6f23ca457f4cde2442687be292}{czyszczenie\+Okna}} (sf\+::\+Render\+Window $\ast$, sf\+::\+Color)
+\begin{DoxyCompactList}\small\item\em Czyści okno gry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_ad7fac822a66e2a3d0b1e386d29f02b53}{czyszczenie\+Bitmapy}} (sf\+::\+Sprite $\ast$, sf\+::\+Color)
+\begin{DoxyCompactList}\small\item\em Czyści bitmapę. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_a6600375865300e38497bc795e1c43665}{zapisywanie\+Do\+Pliku}} (string)
+\begin{DoxyCompactList}\small\item\em Zapisuje treść loga do pliku. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_engine_aeb07bea39ec8ad116be69e81a60627ea}\label{class_engine_aeb07bea39ec8ad116be69e81a60627ea}} 
+int {\bfseries szerokosc}
+\item 
+\mbox{\Hypertarget{class_engine_ab5cf17d73367b244aab19584ab2b6808}\label{class_engine_ab5cf17d73367b244aab19584ab2b6808}} 
+int {\bfseries wysokosc}
+\item 
+\mbox{\Hypertarget{class_engine_ae8880608b8424e03fd936b8d0fde4bd0}\label{class_engine_ae8880608b8424e03fd936b8d0fde4bd0}} 
+\mbox{\hyperlink{class_menu_gry}{Menu\+Gry}} {\bfseries menu}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_engine_ad7fac822a66e2a3d0b1e386d29f02b53}\label{class_engine_ad7fac822a66e2a3d0b1e386d29f02b53}} 
+\index{Engine@{Engine}!czyszczenieBitmapy@{czyszczenieBitmapy}}
+\index{czyszczenieBitmapy@{czyszczenieBitmapy}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{czyszczenieBitmapy()}{czyszczenieBitmapy()}}
+{\footnotesize\ttfamily void Engine\+::czyszczenie\+Bitmapy (\begin{DoxyParamCaption}\item[{sf\+::\+Sprite $\ast$}]{bitmapa,  }\item[{sf\+::\+Color}]{kolor }\end{DoxyParamCaption})}
+
+
+
+Czyści bitmapę. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bitmapa} & Wskaźnik na bitmapę. \\
+\hline
+{\em kolor} & Kolor, którym ma być wyczyszczona bitmapa. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_engine_acf5f5c6f23ca457f4cde2442687be292}\label{class_engine_acf5f5c6f23ca457f4cde2442687be292}} 
+\index{Engine@{Engine}!czyszczenieOkna@{czyszczenieOkna}}
+\index{czyszczenieOkna@{czyszczenieOkna}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{czyszczenieOkna()}{czyszczenieOkna()}}
+{\footnotesize\ttfamily void Engine\+::czyszczenie\+Okna (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{okno,  }\item[{sf\+::\+Color}]{kolor }\end{DoxyParamCaption})}
+
+
+
+Czyści okno gry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em okno} & Wskaźnik na okno gry. \\
+\hline
+{\em kolor} & Kolor, którym ma być wyczyszczone okno. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_engine_a813ec3855a5b9b7af11f210e8efa8cf3}\label{class_engine_a813ec3855a5b9b7af11f210e8efa8cf3}} 
+\index{Engine@{Engine}!inneParametry@{inneParametry}}
+\index{inneParametry@{inneParametry}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{inneParametry()}{inneParametry()}}
+{\footnotesize\ttfamily void Engine\+::inne\+Parametry (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{glowne\+Okno }\end{DoxyParamCaption})}
+
+
+
+Ustawia inne parametry dla głównego okna gry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em glowne\+Okno} & Wskaźnik na główne okno gry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_engine_ad2f3de0fda4640ed3275e57907db5f82}\label{class_engine_ad2f3de0fda4640ed3275e57907db5f82}} 
+\index{Engine@{Engine}!ustawRozdzielczosc@{ustawRozdzielczosc}}
+\index{ustawRozdzielczosc@{ustawRozdzielczosc}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{ustawRozdzielczosc()}{ustawRozdzielczosc()}}
+{\footnotesize\ttfamily void Engine\+::ustaw\+Rozdzielczosc (\begin{DoxyParamCaption}\item[{int}]{szerokosc,  }\item[{int}]{wysokosc }\end{DoxyParamCaption})}
+
+
+
+Ustawia rozdzielczość silnika gry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em szerokosc} & Szerokość okna gry. \\
+\hline
+{\em wysokosc} & Wysokość okna gry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_engine_a6600375865300e38497bc795e1c43665}\label{class_engine_a6600375865300e38497bc795e1c43665}} 
+\index{Engine@{Engine}!zapisywanieDoPliku@{zapisywanieDoPliku}}
+\index{zapisywanieDoPliku@{zapisywanieDoPliku}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{zapisywanieDoPliku()}{zapisywanieDoPliku()}}
+{\footnotesize\ttfamily void Engine\+::zapisywanie\+Do\+Pliku (\begin{DoxyParamCaption}\item[{string}]{tresc\+Loga }\end{DoxyParamCaption})}
+
+
+
+Zapisuje treść loga do pliku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tresc\+Loga} & Treść loga do zapisania. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine.\+hpp\item 
+Engine.\+cpp\end{DoxyCompactItemize}

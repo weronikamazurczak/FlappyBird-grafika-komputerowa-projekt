@@ -1,0 +1,144 @@
+\hypertarget{class_gra}{}\doxysection{Gra Class Reference}
+\label{class_gra}\index{Gra@{Gra}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gra_ab2fc634ad4c3797b243e71bd5e601553}\label{class_gra_ab2fc634ad4c3797b243e71bd5e601553}} 
+enum {\bfseries game\+State} \{ {\bfseries GAME\+\_\+\+STATE} = 0
+, {\bfseries GAME\+\_\+\+OVER\+\_\+\+STATE} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gra_a85a3fce34f62b6e87fbe6e9cf2419ca7}\label{class_gra_a85a3fce34f62b6e87fbe6e9cf2419ca7}} 
+{\bfseries Gra} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \mbox{\hyperlink{class_gra}{Gra}}. Inicjalizuje tekstury, muzykę i inne elementy gry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gra_acbb9830c8f22e1d904f74e2423837947}{wyswietl}} (sf\+::\+Render\+Window $\ast$okno)
+\begin{DoxyCompactList}\small\item\em Wyświetla grę na ekranie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gra_abba9fd9ecf2fe6c35424ea14959ef412}{otworz\+Okno\+Gry}} ()
+\begin{DoxyCompactList}\small\item\em Otwiera okno gry i zarządza logiką gry. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_gra_a8d50abb9c1e56c102c14197adb451556}\label{class_gra_a8d50abb9c1e56c102c14197adb451556}} 
+void {\bfseries obsluga\+Kolizji} ()
+\begin{DoxyCompactList}\small\item\em Obsługuje kolizje w grze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gra_aea60460f4194d59fa7822327a3c6cca2}{zapisywanie\+Punktow}} (int punkty)
+\begin{DoxyCompactList}\small\item\em Zapisuje wynik końcowy gry do pliku. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gra_a485b5a521d44192be6ee962f959b7216}{inne\+Parametry}} (sf\+::\+Render\+Window $\ast$okno)
+\begin{DoxyCompactList}\small\item\em Ustawia inne parametry dla gry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gra_a3db8ac017500e5ce3927496c571646c8}\label{class_gra_a3db8ac017500e5ce3927496c571646c8}} 
+int {\bfseries stan\+Gry} = GAME\+\_\+\+STATE
+\item 
+\mbox{\Hypertarget{class_gra_aaeec2cd3979774b0c442c05005ba458b}\label{class_gra_aaeec2cd3979774b0c442c05005ba458b}} 
+int {\bfseries punkty\+Koncowe} = 0
+\item 
+\mbox{\Hypertarget{class_gra_a8c4a266b500ccbf1602ef4cbb3982be1}\label{class_gra_a8c4a266b500ccbf1602ef4cbb3982be1}} 
+sf\+::\+Clock {\bfseries clock}
+\item 
+\mbox{\Hypertarget{class_gra_ab7f0d4f678ce1f4092c846412f502ea7}\label{class_gra_ab7f0d4f678ce1f4092c846412f502ea7}} 
+sf\+::\+Texture {\bfseries tlo\+Texture}
+\item 
+\mbox{\Hypertarget{class_gra_a8aaca81b914725e5ff0f6fe81abbfcf1}\label{class_gra_a8aaca81b914725e5ff0f6fe81abbfcf1}} 
+sf\+::\+Sprite {\bfseries tlo\+Sprite}
+\item 
+\mbox{\Hypertarget{class_gra_a04d3538b7e54f6debc37df59837cf548}\label{class_gra_a04d3538b7e54f6debc37df59837cf548}} 
+sf\+::\+Font {\bfseries font}
+\item 
+\mbox{\Hypertarget{class_gra_ad0938d74cb5848da9ae7f4e2a1303abf}\label{class_gra_ad0938d74cb5848da9ae7f4e2a1303abf}} 
+sf\+::\+Text {\bfseries tekst\+Przegrana\+Gra}
+\item 
+\mbox{\Hypertarget{class_gra_abdb65baf87fcdd0d76c68dbd268970a5}\label{class_gra_abdb65baf87fcdd0d76c68dbd268970a5}} 
+sf\+::\+Texture {\bfseries koniec\+Texture}
+\item 
+\mbox{\Hypertarget{class_gra_a1d3a20d328e651cb10574ea027013839}\label{class_gra_a1d3a20d328e651cb10574ea027013839}} 
+sf\+::\+Sprite {\bfseries koniec\+Sprite}
+\item 
+\mbox{\Hypertarget{class_gra_abc2d326fe4a693082e44eefae24c6bb8}\label{class_gra_abc2d326fe4a693082e44eefae24c6bb8}} 
+int {\bfseries punkty} = 0
+\item 
+\mbox{\Hypertarget{class_gra_ad90789a6d3d3a35f6246804920cf68a2}\label{class_gra_ad90789a6d3d3a35f6246804920cf68a2}} 
+sf\+::\+Text {\bfseries text\+Punkty}
+\item 
+\mbox{\Hypertarget{class_gra_a6de9365aa470b1d914992262a67c350a}\label{class_gra_a6de9365aa470b1d914992262a67c350a}} 
+\mbox{\hyperlink{class_ptak}{Ptak}} {\bfseries ptak}
+\item 
+\mbox{\Hypertarget{class_gra_a029618e3626e6dd3d8d8e413be83b124}\label{class_gra_a029618e3626e6dd3d8d8e413be83b124}} 
+\mbox{\hyperlink{class_grunt}{Grunt}} {\bfseries grunt}
+\item 
+\mbox{\Hypertarget{class_gra_a19419e3c580c440f7ad7c3c533e08b22}\label{class_gra_a19419e3c580c440f7ad7c3c533e08b22}} 
+\mbox{\hyperlink{class_rury}{Rury}} {\bfseries rury}
+\item 
+\mbox{\Hypertarget{class_gra_a0b0ad903c2422a26ae3356ff56119566}\label{class_gra_a0b0ad903c2422a26ae3356ff56119566}} 
+sf\+::\+Music {\bfseries muzyka}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gra_a485b5a521d44192be6ee962f959b7216}\label{class_gra_a485b5a521d44192be6ee962f959b7216}} 
+\index{Gra@{Gra}!inneParametry@{inneParametry}}
+\index{inneParametry@{inneParametry}!Gra@{Gra}}
+\doxysubsubsection{\texorpdfstring{inneParametry()}{inneParametry()}}
+{\footnotesize\ttfamily void Gra\+::inne\+Parametry (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{glowne\+Okno }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ustawia inne parametry dla gry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em glowne\+Okno} & Wskaźnik na główne okno gry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gra_abba9fd9ecf2fe6c35424ea14959ef412}\label{class_gra_abba9fd9ecf2fe6c35424ea14959ef412}} 
+\index{Gra@{Gra}!otworzOknoGry@{otworzOknoGry}}
+\index{otworzOknoGry@{otworzOknoGry}!Gra@{Gra}}
+\doxysubsubsection{\texorpdfstring{otworzOknoGry()}{otworzOknoGry()}}
+{\footnotesize\ttfamily void Gra\+::otworz\+Okno\+Gry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Otwiera okno gry i zarządza logiką gry. 
+
+Ta funkcja tworzy okno gry, obsługuje zdarzenia i zarządza stanem gry. W zależności od stanu gry, funkcja wywołuje odpowiednie funkcje do rysowania i aktualizacji obiektów gry. \mbox{\Hypertarget{class_gra_acbb9830c8f22e1d904f74e2423837947}\label{class_gra_acbb9830c8f22e1d904f74e2423837947}} 
+\index{Gra@{Gra}!wyswietl@{wyswietl}}
+\index{wyswietl@{wyswietl}!Gra@{Gra}}
+\doxysubsubsection{\texorpdfstring{wyswietl()}{wyswietl()}}
+{\footnotesize\ttfamily void Gra\+::wyswietl (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{okno }\end{DoxyParamCaption})}
+
+
+
+Wyświetla grę na ekranie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em okno} & Wskaźnik na okno gry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gra_aea60460f4194d59fa7822327a3c6cca2}\label{class_gra_aea60460f4194d59fa7822327a3c6cca2}} 
+\index{Gra@{Gra}!zapisywaniePunktow@{zapisywaniePunktow}}
+\index{zapisywaniePunktow@{zapisywaniePunktow}!Gra@{Gra}}
+\doxysubsubsection{\texorpdfstring{zapisywaniePunktow()}{zapisywaniePunktow()}}
+{\footnotesize\ttfamily void Gra\+::zapisywanie\+Punktow (\begin{DoxyParamCaption}\item[{int}]{punkty\+Koncowe }\end{DoxyParamCaption})}
+
+
+
+Zapisuje wynik końcowy gry do pliku. 
+
+Ta funkcja otwiera plik \char`\"{}punkty.\+txt\char`\"{} w trybie dołączania (append) i zapisuje do niego wynik końcowy gry.
+
+
+\begin{DoxyParams}{Parameters}
+{\em punkty\+Koncowe} & Wynik końcowy gry do zapisania. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Gra.\+hpp\item 
+Gra.\+cpp\end{DoxyCompactItemize}

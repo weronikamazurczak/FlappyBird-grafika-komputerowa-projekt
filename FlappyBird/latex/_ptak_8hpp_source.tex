@@ -1,0 +1,44 @@
+\hypertarget{_ptak_8hpp_source}{}\doxysection{Ptak.\+hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Rury.hpp"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define GRAWITACJAPTAKA 3.0}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define SKOKPTAKA 12.0}}
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_ptak}{Ptak}} \{}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_ptak_aa0ff209669932e2a73faecc7732246cd}{Ptak}}();}
+\DoxyCodeLine{11     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ptak_ad48a862f61c1435ff8699f6463017862}{przemiescPtakaDoPrzodu}}(sf::RenderWindow* okno);}
+\DoxyCodeLine{12     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ptak_ae0a4e68a60a8b8240966abca7e968b59}{draw}}(sf::RenderWindow* okno);}
+\DoxyCodeLine{13     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ptak_a7aaa666d9cb3c67d7996d945f2605d49}{skacz}}(sf::RenderWindow* okno);}
+\DoxyCodeLine{14     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ptak_a9ebfc8b0f4972720710b51c6f8965f70}{ptakInit}}(sf::RenderWindow* okno);}
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ptak_a9e584ac5025c4322969d70ac8d3a9d2d}{grawitacjaPtak}}();}
+\DoxyCodeLine{16     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_ptak_ac0ebc58673ee4b90042e29c5f4eaa91a}{kolizja}}(\mbox{\hyperlink{class_rury}{Rury}} rury);}
+\DoxyCodeLine{17     \textcolor{keywordtype}{float} punktyLicznik = 0.f;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ptak_a2b6cab615ccb4abef1870887a7fb98c2}{zliczPunkty}}();}
+\DoxyCodeLine{19     sf::Sprite \mbox{\hyperlink{class_ptak_a2b348b31ec580a3885052741c99c036a}{getPtakSprite}}();}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ptak_ae7a399c24a05f5d6e4f33c228ee00291}{resetLicznik}}();}
+\DoxyCodeLine{21     \textcolor{keywordtype}{int} licznikPtakow;}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} numerPtaka = 1;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{private}:}
+\DoxyCodeLine{25     \textcolor{keywordtype}{float} x=0;}
+\DoxyCodeLine{26     \textcolor{keywordtype}{float} y=0;}
+\DoxyCodeLine{27     sf::Sprite ptakSprite;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} iteratorAminacji;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     sf::Texture ptak1Texture;}
+\DoxyCodeLine{32     sf::Sprite ptak1Sprite;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     sf::Texture ptak2Texture;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     sf::Texture ptak3Texture;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     sf::Texture ptak4Texture;}
+\DoxyCodeLine{39 \};}
+
+\end{DoxyCode}

@@ -54,3 +54,10 @@ Ilosc punktow : 8
 Ilosc punktow : 2
 Ilosc punktow : 11
 Ilosc punktow : 22
+Ilosc punktow : 1
+Ilosc punktow : 6
+Ilosc punktow : 0
+Ilosc punktow : 0
+Ilosc punktow : 6
+Ilosc punktow : 2
+Ilosc punktow : 0

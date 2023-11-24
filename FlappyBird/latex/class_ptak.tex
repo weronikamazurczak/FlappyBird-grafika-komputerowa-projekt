@@ -1,0 +1,183 @@
+\hypertarget{class_ptak}{}\doxysection{Ptak Class Reference}
+\label{class_ptak}\index{Ptak@{Ptak}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ptak_aa0ff209669932e2a73faecc7732246cd}\label{class_ptak_aa0ff209669932e2a73faecc7732246cd}} 
+{\bfseries Ptak} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \mbox{\hyperlink{class_ptak}{Ptak}}. Inicjalizuje tekstury ptaka. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ptak_ad48a862f61c1435ff8699f6463017862}{przemiesc\+Ptaka\+Do\+Przodu}} (sf\+::\+Render\+Window $\ast$okno)
+\begin{DoxyCompactList}\small\item\em Przesuwa ptaka do przodu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ptak_ae0a4e68a60a8b8240966abca7e968b59}{draw}} (sf\+::\+Render\+Window $\ast$okno)
+\begin{DoxyCompactList}\small\item\em Rysuje ptaka na ekranie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ptak_a7aaa666d9cb3c67d7996d945f2605d49}{skacz}} (sf\+::\+Render\+Window $\ast$okno)
+\begin{DoxyCompactList}\small\item\em Sprawia, że ptak skacze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ptak_a9ebfc8b0f4972720710b51c6f8965f70}{ptak\+Init}} (sf\+::\+Render\+Window $\ast$okno)
+\begin{DoxyCompactList}\small\item\em Inicjalizuje pozycję ptaka na ekranie. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ptak_a9e584ac5025c4322969d70ac8d3a9d2d}\label{class_ptak_a9e584ac5025c4322969d70ac8d3a9d2d}} 
+void {\bfseries grawitacja\+Ptak} ()
+\begin{DoxyCompactList}\small\item\em Symuluje grawitację, pociągając ptaka w dół. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ptak_ac0ebc58673ee4b90042e29c5f4eaa91a}{kolizja}} (\mbox{\hyperlink{class_rury}{Rury}} rury)
+\begin{DoxyCompactList}\small\item\em Sprawdza, czy ptak koliduje z rurami. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ptak_a2b6cab615ccb4abef1870887a7fb98c2}{zlicz\+Punkty}} ()
+\begin{DoxyCompactList}\small\item\em Zlicza punkty gracza. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_ptak_a2b348b31ec580a3885052741c99c036a}{get\+Ptak\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca sprite ptaka. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ptak_ae7a399c24a05f5d6e4f33c228ee00291}\label{class_ptak_ae7a399c24a05f5d6e4f33c228ee00291}} 
+void {\bfseries reset\+Licznik} ()
+\begin{DoxyCompactList}\small\item\em Resetuje licznik punktów. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ptak_ad826661e608a84bd76c7cf0d4bfc6da9}\label{class_ptak_ad826661e608a84bd76c7cf0d4bfc6da9}} 
+float {\bfseries punkty\+Licznik} = 0.f
+\item 
+\mbox{\Hypertarget{class_ptak_aec95f505460456b7167b58cbf35cf19b}\label{class_ptak_aec95f505460456b7167b58cbf35cf19b}} 
+int {\bfseries licznik\+Ptakow}
+\item 
+\mbox{\Hypertarget{class_ptak_a44cff85de3ea3d713c83b598616c808d}\label{class_ptak_a44cff85de3ea3d713c83b598616c808d}} 
+int {\bfseries numer\+Ptaka} = 1
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ptak_a576c4c0d310ea4f7e1b54e514c1a7bb6}\label{class_ptak_a576c4c0d310ea4f7e1b54e514c1a7bb6}} 
+float {\bfseries x} =0
+\item 
+\mbox{\Hypertarget{class_ptak_ae7ffe2049979ee638a7322f5ee201bd6}\label{class_ptak_ae7ffe2049979ee638a7322f5ee201bd6}} 
+float {\bfseries y} =0
+\item 
+\mbox{\Hypertarget{class_ptak_a0bd2f73124a4a70ee5a3ec2af857b838}\label{class_ptak_a0bd2f73124a4a70ee5a3ec2af857b838}} 
+sf\+::\+Sprite {\bfseries ptak\+Sprite}
+\item 
+\mbox{\Hypertarget{class_ptak_a834bfc5a0ee93f21b94bf5bd1210263e}\label{class_ptak_a834bfc5a0ee93f21b94bf5bd1210263e}} 
+unsigned int {\bfseries iterator\+Aminacji}
+\item 
+\mbox{\Hypertarget{class_ptak_adcb22a1c17e5fde50b8c43d8745da21f}\label{class_ptak_adcb22a1c17e5fde50b8c43d8745da21f}} 
+sf\+::\+Texture {\bfseries ptak1\+Texture}
+\item 
+\mbox{\Hypertarget{class_ptak_ab406181dcb89052ddb087861ce9106a5}\label{class_ptak_ab406181dcb89052ddb087861ce9106a5}} 
+sf\+::\+Sprite {\bfseries ptak1\+Sprite}
+\item 
+\mbox{\Hypertarget{class_ptak_ab5def5b5bc4a6a5122d3e3f0927f78fd}\label{class_ptak_ab5def5b5bc4a6a5122d3e3f0927f78fd}} 
+sf\+::\+Texture {\bfseries ptak2\+Texture}
+\item 
+\mbox{\Hypertarget{class_ptak_a59fd0a5153e3d1097f9fda35123cb51b}\label{class_ptak_a59fd0a5153e3d1097f9fda35123cb51b}} 
+sf\+::\+Texture {\bfseries ptak3\+Texture}
+\item 
+\mbox{\Hypertarget{class_ptak_a618a0fd083aec7b6f3a1168ca5fc27f0}\label{class_ptak_a618a0fd083aec7b6f3a1168ca5fc27f0}} 
+sf\+::\+Texture {\bfseries ptak4\+Texture}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ptak_ae0a4e68a60a8b8240966abca7e968b59}\label{class_ptak_ae0a4e68a60a8b8240966abca7e968b59}} 
+\index{Ptak@{Ptak}!draw@{draw}}
+\index{draw@{draw}!Ptak@{Ptak}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Ptak\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{okno }\end{DoxyParamCaption})}
+
+
+
+Rysuje ptaka na ekranie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em okno} & Wskaźnik na okno gry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ptak_a2b348b31ec580a3885052741c99c036a}\label{class_ptak_a2b348b31ec580a3885052741c99c036a}} 
+\index{Ptak@{Ptak}!getPtakSprite@{getPtakSprite}}
+\index{getPtakSprite@{getPtakSprite}!Ptak@{Ptak}}
+\doxysubsubsection{\texorpdfstring{getPtakSprite()}{getPtakSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite Ptak\+::get\+Ptak\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zwraca sprite ptaka. 
+
+\begin{DoxyReturn}{Returns}
+Sprite ptaka. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ptak_ac0ebc58673ee4b90042e29c5f4eaa91a}\label{class_ptak_ac0ebc58673ee4b90042e29c5f4eaa91a}} 
+\index{Ptak@{Ptak}!kolizja@{kolizja}}
+\index{kolizja@{kolizja}!Ptak@{Ptak}}
+\doxysubsubsection{\texorpdfstring{kolizja()}{kolizja()}}
+{\footnotesize\ttfamily bool Ptak\+::kolizja (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rury}{Rury}}}]{rury }\end{DoxyParamCaption})}
+
+
+
+Sprawdza, czy ptak koliduje z rurami. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rury} & Obiekt klasy \mbox{\hyperlink{class_rury}{Rury}} reprezentujący rury w grze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true jeśli ptak koliduje z rurami, false w przeciwnym razie. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ptak_ad48a862f61c1435ff8699f6463017862}\label{class_ptak_ad48a862f61c1435ff8699f6463017862}} 
+\index{Ptak@{Ptak}!przemiescPtakaDoPrzodu@{przemiescPtakaDoPrzodu}}
+\index{przemiescPtakaDoPrzodu@{przemiescPtakaDoPrzodu}!Ptak@{Ptak}}
+\doxysubsubsection{\texorpdfstring{przemiescPtakaDoPrzodu()}{przemiescPtakaDoPrzodu()}}
+{\footnotesize\ttfamily void Ptak\+::przemiesc\+Ptaka\+Do\+Przodu (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{okno }\end{DoxyParamCaption})}
+
+
+
+Przesuwa ptaka do przodu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em okno} & Wskaźnik na okno gry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ptak_a9ebfc8b0f4972720710b51c6f8965f70}\label{class_ptak_a9ebfc8b0f4972720710b51c6f8965f70}} 
+\index{Ptak@{Ptak}!ptakInit@{ptakInit}}
+\index{ptakInit@{ptakInit}!Ptak@{Ptak}}
+\doxysubsubsection{\texorpdfstring{ptakInit()}{ptakInit()}}
+{\footnotesize\ttfamily void Ptak\+::ptak\+Init (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{okno }\end{DoxyParamCaption})}
+
+
+
+Inicjalizuje pozycję ptaka na ekranie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em okno} & Wskaźnik na okno gry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ptak_a7aaa666d9cb3c67d7996d945f2605d49}\label{class_ptak_a7aaa666d9cb3c67d7996d945f2605d49}} 
+\index{Ptak@{Ptak}!skacz@{skacz}}
+\index{skacz@{skacz}!Ptak@{Ptak}}
+\doxysubsubsection{\texorpdfstring{skacz()}{skacz()}}
+{\footnotesize\ttfamily void Ptak\+::skacz (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{okno }\end{DoxyParamCaption})}
+
+
+
+Sprawia, że ptak skacze. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em okno} & Wskaźnik na okno gry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ptak_a2b6cab615ccb4abef1870887a7fb98c2}\label{class_ptak_a2b6cab615ccb4abef1870887a7fb98c2}} 
+\index{Ptak@{Ptak}!zliczPunkty@{zliczPunkty}}
+\index{zliczPunkty@{zliczPunkty}!Ptak@{Ptak}}
+\doxysubsubsection{\texorpdfstring{zliczPunkty()}{zliczPunkty()}}
+{\footnotesize\ttfamily int Ptak\+::zlicz\+Punkty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zlicza punkty gracza. 
+
+\begin{DoxyReturn}{Returns}
+Liczba punktów gracza. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ptak.\+hpp\item 
+Ptak.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,48 @@
+\hypertarget{_gra_8hpp_source}{}\doxysection{Gra.\+hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <SFML/System.hpp>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <SFML/Window.hpp>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Ptak.hpp"{}};}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}Grunt.hpp"{}};}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_gra}{Gra}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_gra_a85a3fce34f62b6e87fbe6e9cf2419ca7}{Gra}}();}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gra_acbb9830c8f22e1d904f74e2423837947}{wyswietl}}(sf::RenderWindow* okno);}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gra_abba9fd9ecf2fe6c35424ea14959ef412}{otworzOknoGry}}();}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gra_a8d50abb9c1e56c102c14197adb451556}{obslugaKolizji}}();}
+\DoxyCodeLine{21     \textcolor{keyword}{enum} gameState \{}
+\DoxyCodeLine{22         GAME\_STATE = 0,}
+\DoxyCodeLine{23         GAME\_OVER\_STATE = 1}
+\DoxyCodeLine{24     \};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gra_aea60460f4194d59fa7822327a3c6cca2}{zapisywaniePunktow}}(\textcolor{keywordtype}{int} punkty);}
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} stanGry = GAME\_STATE;}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} punktyKoncowe = 0;}
+\DoxyCodeLine{29     sf::Clock clock;}
+\DoxyCodeLine{30     sf::Texture tloTexture;}
+\DoxyCodeLine{31     sf::Sprite tloSprite;}
+\DoxyCodeLine{32     sf::Font font;}
+\DoxyCodeLine{33     sf::Text tekstPrzegranaGra;}
+\DoxyCodeLine{34     sf::Texture koniecTexture;}
+\DoxyCodeLine{35     sf::Sprite koniecSprite;}
+\DoxyCodeLine{36     \textcolor{keywordtype}{int} punkty = 0;}
+\DoxyCodeLine{37     sf::Text textPunkty;}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gra_a485b5a521d44192be6ee962f959b7216}{inneParametry}}(sf::RenderWindow* okno);}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_ptak}{Ptak}} ptak;}
+\DoxyCodeLine{40     \mbox{\hyperlink{class_grunt}{Grunt}} grunt;}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_rury}{Rury}} rury;}
+\DoxyCodeLine{42     sf::Music muzyka;}
+\DoxyCodeLine{43 \};}
+
+\end{DoxyCode}

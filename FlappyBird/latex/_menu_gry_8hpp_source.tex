@@ -1,0 +1,49 @@
+\hypertarget{_menu_gry_8hpp_source}{}\doxysection{Menu\+Gry.\+hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_menu_gry}{MenuGry}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{public}: }
+\DoxyCodeLine{10     \mbox{\hyperlink{class_menu_gry_a941aa90d341aa6450ed699e813a21549}{MenuGry}}();}
+\DoxyCodeLine{11     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_gry_a22ddc270c2002bef9709228b1a2a9421}{wyswietl}}(sf::RenderWindow* okno);}
+\DoxyCodeLine{12     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_gry_a592fd6b7868e3e89c5978556aabac314}{obsluga}}(sf::RenderWindow* okno);}
+\DoxyCodeLine{13     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_gry_a2fb0541b4dd5c7bc1b1118e063ccc70d}{otworzInstrukcje}}();}
+\DoxyCodeLine{14     \textcolor{keywordtype}{bool} czyInstrukcjaOtwarta;}
+\DoxyCodeLine{15 \textcolor{keyword}{private}:}
+\DoxyCodeLine{16     sf::Texture tloTexture;}
+\DoxyCodeLine{17     sf::Sprite tloSprite;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     sf::Texture tloTextureInstr;}
+\DoxyCodeLine{21     sf::Sprite tloInstrSprite;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     sf::Texture tloTextureGetReady;}
+\DoxyCodeLine{24     sf::Sprite tloGetReadySprite;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     sf::Texture tloTextureHowToPlay;}
+\DoxyCodeLine{27     sf::Sprite tloSpriteHowToPlay;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     sf::Texture tytulTexture;}
+\DoxyCodeLine{30     sf::Sprite tytulSprite;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     sf::Texture przyciskStartTexture;}
+\DoxyCodeLine{33     sf::Sprite przyciskStartSprite;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     sf::Text przyciskInstrukcja;}
+\DoxyCodeLine{36     std::string instrukcja;}
+\DoxyCodeLine{37     sf::Text tekstInstrukcji;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     sf::Font font;}
+\DoxyCodeLine{40     sf::Font font2;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     sf::RectangleShape zaInstrukcja;}
+\DoxyCodeLine{43     sf::RectangleShape zaGra;}
+\DoxyCodeLine{44 \};}
+
+\end{DoxyCode}
